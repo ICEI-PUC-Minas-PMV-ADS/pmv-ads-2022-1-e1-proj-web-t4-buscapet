@@ -17,8 +17,8 @@ O problema que pretendemos resolver é minimizar a quantidade de animais em situ
 O objetivo deste trabalho é a criação de um site de acesso restrito de notificações específicas a um nicho de usuários, notificações essas que visam divulgar a presença de animais em situação de rua, abandonados ou simplesmente perdidos de seus respectivos tutores legais.
 
 Objetivos específicos:
-    • Promover o encontro entre animais perdidos e seus responsáveis legais, retirando assim esses animais da situação de vulnerabilidade, reestabelecendo deste modo o bem estar social;
-    • Minimizar o problema de animais abandonados em grandes centros e ou locais específicos, fornecendo um leque informações sobre animais que se encontram nesta situação, afim de conectar pessoas que possam tornar-se seus tutores legais. 
+* Promover o encontro entre animais perdidos e seus responsáveis legais, retirando assim esses animais da situação de vulnerabilidade, reestabelecendo deste modo o bem estar social;
+* Minimizar o problema de animais abandonados em grandes centros e ou locais específicos, fornecendo um leque informações sobre animais que se encontram nesta situação, afim de conectar pessoas que possam tornar-se seus tutores legais. 
 
 ## Justificativa
 
