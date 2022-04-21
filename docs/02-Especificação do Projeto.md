@@ -48,31 +48,30 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| O site deve apresentar na página principal um menu para cadastro e login de usuários. | ALTA | 
+|RF-002| O site deve permitir ao usuário a opção de cadastro de animais em situação de rua.   | ALTA |
+|RF-003| O site deve apresentar uma lista de todos os animais cadastrados (feed). | ALTA |
+|RF-004| O site deve oferecer a funcionalidade de filtro/pesquisa para permitir ao usuário localizar animais pela proximidade. | ALTA |
+|RF-005| O site deve permitir a visualização detalhada de um caso. | ALTA |
+|RF-006| O site deve permitir a atualização de cadastro de usuário. | MÉDIA |
+|RF-007| O site deve permitir visualizar todas as postagens feitas pelo usuário. | BAIXA |
+|RF-008| O site deve permitir visualizar o usuário. | BAIXA |
+|RF-009| O site deve permitir visualizar dados de contato entre os usuários. | MÉDIA |
+|RF-010| O site deve permitir remover postagens. | MÉDIA |
+|RF-010| O site deve permitir curtir postagens.  | BAIXA |
+
 
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-001| O site deve ser publicado em um ambiente acessível publicamente na internet. | ALTA | 
+|RNF-002| O site deverá ser responsivo permitindo a visualização em um celular de forma adequada. | ALTA | 
+|RNF-003| O site deve ter bom nível de contraste entre os elementos da tela em conformidade. | MÉDIA |
+|RNF-004| O site deve ser compatível com os principais navegadores do mercado. | ALTA | 
 
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 ## Restrições
 
