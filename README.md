@@ -8,16 +8,17 @@
 
 Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
 
-## Integrantes
+# Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Darielly Cristina de Souza Santos
+* Francisco Costa Ribeiro
+* Luiz Felipe Caudensk Mendes
+* Ricardo peixoto da Silva
+* Thais Gurgel Bezerra
 
 ## Orientador
 
-* Nome completo do professor 1
+* Sandra Maria Silveira
 
 ## Instruções de utilização
 

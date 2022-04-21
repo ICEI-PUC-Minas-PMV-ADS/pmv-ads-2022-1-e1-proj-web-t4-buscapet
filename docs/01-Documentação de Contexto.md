@@ -1,46 +1,33 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+É notório que nos dias de hoje, principalmente em ambientes urbanos, mas não somente nestes, o crescente número de animais em situação de rua. Neste contexto são incluídos animais abandonados ainda filhotes, logo após o nascimento, animais já adultos, muitas vezes doentes, que por decisão de seus tutores foram deixados por conta própria, e claro aqueles que por algum motivo se perderam dos seus tutores legais.
+
+Sensíveis a essa situação há um grande número de pessoas dispostas a contribuir para o encontro espontâneo e consciente destes animais vulneráveis com tutores com condições mínimas e disponibilidade para assumir a responsabilidade de adotar um destes animais.
+
+Com esse objetivo, é de fundamental importância uma ferramenta que facilite o encontro de pessoas a procura de animais de estimação perdidos, ou que possam adotar um destes animais abandonados para que possam conceder os devidos cuidados.
+
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
+O problema que pretendemos resolver é minimizar a quantidade de animais em situação de rua, seja por abandono ou por estar perdidos involuntariamente, diminuindo assim a distância entre animais que estão a viver com essas dificuldades e as pessoas que podem acabar com o sofrimento vivido por estes animais.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+O objetivo deste trabalho é a criação de um site de acesso restrito de notificações específicas a um nicho de usuários, notificações essas que visam divulgar a presença de animais em situação de rua, abandonados ou simplesmente perdidos de seus respectivos tutores legais.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Objetivos específicos:
+* Promover o encontro entre animais perdidos e seus responsáveis legais, retirando assim esses animais da situação de vulnerabilidade, reestabelecendo deste modo o bem estar social;
+* Minimizar o problema de animais abandonados em grandes centros e ou locais específicos, fornecendo um leque informações sobre animais que se encontram nesta situação, afim de conectar pessoas que possam tornar-se seus tutores legais. 
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+Dados da OMS, Organização Mundial da Saúde, apontam que no Brasil, existem cerca de 30 milhões de animais abandonados; desse total, cerca 10 milhões são gatos, e 20 milhões, cachorros. Os traumas de um abandono deixam várias cicatrizes na vida de um pet, muitas vezes é necessário a ajuda de um veterinário ou adestrador para reverter esse quadro (Lemos S; 2021). 
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Paralelamente, há uma falta de mecanismos que auxiliem a ligação entre pessoas ocasionalmente dispostas, e em condições, de adotar um animal de estimação ou ainda resgatar um pet que já lhe pertencia previamente, mas ocasionalmente se encontrava perdido.
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+Embora todos as pessoas que residem em determinadas localidades possam se beneficiar com projeto, o foco deste trabalho está no público que tem afetividade nata pela causa animal, pessoas que possuem animais de estimação e pessoas dispostas a ter animais de estimação. 
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+Desta forma, estabeleceu-se como público-alvo deste projeto homens, mulheres e adolescentes entre 15 e 65 anos que se encontram em oportunidades de ter, abrigar ou resgatar animais que se encontram nas ruas seja por abandono ou casos de desaparecimento acidental, que possuam acesso a rede de comunicação e que fazem uso frequente de computadores e dispositivos móveis para entretenimento.
