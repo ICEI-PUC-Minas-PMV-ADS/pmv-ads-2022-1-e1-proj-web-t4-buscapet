@@ -1,12 +1,12 @@
 # TÍTULO DO PROJETO
 
-`CURSO`
+Análise e Desenvolvimento de Sistemas
 
-`DISCIPLINA`
+Eixo 1 - Projeto: Desenvolvimento de Aplicação Web Front-End 
 
-`SEMESTRE`
+2022.1
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Busca Pet está sendo desenvolvido afim de ajudar no resgate e adoção de animais em situação de rua.
 
 # Integrantes
 
