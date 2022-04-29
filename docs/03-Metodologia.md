@@ -41,8 +41,8 @@ A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para def
                     Luis Felipe
                     Ricardo Peixoto
                     Thais Gurgel
-        ◦ Equipe de Design: Darielly Santos
-
+        ◦ Equipe de Design: Thaís Gurgel
+                            Francisco Costa  
 ### Processo
 
 
