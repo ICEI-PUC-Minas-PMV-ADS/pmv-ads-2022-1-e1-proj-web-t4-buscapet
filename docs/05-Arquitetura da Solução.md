@@ -5,7 +5,7 @@
 # Diagrama de Componentes
 
 ![Diagrama de Componentes](img/diagrama_draw_io_busca_pet.png)
-<center>Figura 1 - Hospedagem FireBase Hosting (imagens da documentação) </center>
+<center>Figura 1 - Diagrama de componentes da solução busca pet </center>
 
 A solução implementada conta com os seguintes módulos:
 - **Navegador** - Interface básica do sistema  
