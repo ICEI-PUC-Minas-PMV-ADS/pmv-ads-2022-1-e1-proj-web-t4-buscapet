@@ -1,11 +1,33 @@
 # Projeto de Interface
 
-Na pagina original o usuario terá a visão do mapa da sua localidade marcando os casos de animais registrados e um aviso que é atualizado a cada novo registro. Terá botões para cadastrar usuario, buscar pet por caracteristicas, cadastrar animais, dicas para resgatar algum animal, reportar resgate de um animal e informações de ajuda.
+ Assim que o usuário entra na plataforma, ele é apresentado à tela inicial (Tela 1) onde é apresentado uma lista de animais encontrados recentemente.
 
-Essa tela foi pensada para ser pratica e direta, na maior parte da tela o foco e no objetivo, mostrar os animais encontrados na região do usuario.
+![Interface](img/tela_inicial_tela1.png)
+<center> Tela 1 - Tela Inicial </center>
 
-## Wireframes
+Caso ele demonstre interesse por algum dos animais listados ele deverá seguir para (Tela 2) onde é feito cadastro com seus dados pessoais. 
 
-![Exemplo de Wireframe](img/wireframe-buscaPet.png)
+![Interface](img/cadastrar_humano_tela5.png)
+<center> Tela 2 - Tela Cadastro Usuário </center>
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
+Na (Tela 3) o usuário poderá efetuar login para realizar sua identificação para adotar um pet.
+
+![Interface](img/login_busca_pet_tela4.png)
+<center> Tela 3 - Login Usuário </center>
+
+
+
+Na (Tela 4) o usuário escolherá dentre os animais disponiveis qual melhor se encaixa em seu perfil para adoção.
+
+
+![Interface](img/adotar_pet_tela3.png)
+<center> Tela 4 - Tela Adotar Pet </center>
+
+
+Na (Tela 5) o usuário poderá cadastrar um pet avistado por ele, informando características básicas do animal bem como sua última localização conhecida.
+
+![Interface](img/cadastrar_pet_tela2.png)
+<center> Tela 5 - Cadastrar Pet </center>
+
+
+
