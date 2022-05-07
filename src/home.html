@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+    <h1 id="titulo"></h1>
+    <button id="descricao"></button>
+    <table>
+        <tr>
+            <th>Espécie</th>
+            <th>Tamanho</th>
+            <th>Cor</th>
+            <th>Observação</th>
+        </tr>
+        <tr>
+            <td> Gato </td>
+            <td> Grande </td>
+            <td> Preto </td>
+            <td> Sem rabo </td>           
+        </tr>
+        
+    </table>
+</body>
+<script>
+    localStorage.setItem("TITULO","PETS ENCONTRADOS")
+    const titulo = localStorage.getItem ("TITULO")
+    document.getElementById('titulo').innerHTML = titulo
+
+    localStorage.setItem("butaocadastarpet","Cadastrar um pet")
+    const descritivobutao = localStorage.getItem ("butaocadastarpet")
+    document.getElementById('descricao').innerHTML = descritivobutao
+
+
+const pets = [
+    { 
+    especie: "Gato",
+    tamanho:"Pequeno",
+    cor: "Branco",
+    observacao: "Saudável"
+    }, 
+    { 
+    especie: "Gato",
+    tamanho:"Pequeno",
+    cor: "Branco",
+    observacao: "Saudável"
+    }, 
+    { 
+    especie: "Gato",
+    tamanho:"Pequeno",
+    cor: "Branco",
+    observacao: "Saudável"
+    }, 
+    { 
+    especie: "Gato",
+    tamanho:"Pequeno",
+    cor: "Branco",
+    observacao: "Saudável"
+    }, 
+    { 
+    especie: "Gato",
+    tamanho:"Pequeno",
+    cor: "Branco",
+    observacao: "Saudável"
+    }, 
+    
+]
+    localStorage.setItem("pets", JSON.stringify(pets))
+
+
+</script>
+
+</html>
