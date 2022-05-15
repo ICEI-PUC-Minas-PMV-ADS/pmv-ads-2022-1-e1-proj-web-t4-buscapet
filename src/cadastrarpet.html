@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Cadastrar Pet</title>
+
+<style>
+body{
+    background-color: white;
+
+}
+
+#titulo{
+    display: grid;
+    font-family: Arial;
+    font-size: 35px;
+    color: orange;
+    text-align: center;
+}
+
+#form{
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid orange;
+    margin: 40px;
+}
+
+.botao{
+    font-family: arial;
+    background-color: white;
+    color: black;
+}
+
+input[type=text] {
+      width: 40%;
+      padding: 03px 10px;
+      margin: 0px 0;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 2px solid orange;
+}
+
+</style>
+
+</head>
+
+<body>
+    <div id="titulo">
+        <h1>
+            Cadastrar Pet
+        </h1>
+    </div>
+
+    <div id="form">
+        <fieldset>
+            <legend> <strong> Características do Animal</strong></legend>
+            <form name="form_cadastro" action="do_cadastro.html" method="post">
+                Espécie: <input type="text" name="Espécie" value=""><br>
+                <label for="tamanho">Tamanho: </label><br>
+                <select name="tamanho">
+                    <option value="">Selecione um tamanho</option>
+                    <option value="Pequeno">Pequeno</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Grande">Grande</option>
+                </select>
+                <br>
+                Cor: <input type="text" name="Cor" value=""><br>
+                Risco de vida: <br>
+                <input type="radio" name="Risco de vida" value="Baixo">Baixo<br>
+                <input type="radio" name="Risco de vida" value="Médio">Médio<br>
+                <input type="radio" name="Risco de vida" value="Alto">Alto<br>
+                <br>
+
+                Observação: <br>
+                <textarea name="Observação" rows="4" cols="30"> Preencha com alguma Observação</textarea>
+
+        </fieldset>
+        <fieldset>
+            <br>
+            <legend><strong>Última Localização conhecida</strong></legend>
+            Cidade: <input type="text" name="Cidade" value=""><br>
+            Bairro: <input type="text" name="Bairro" value=""><br>
+            Rua: <input type="text" name="Rua" value=""><br>
+            Complemento: <input type="text" name="Complemento" value=""><br>
+            Cep: <input type="text" name="Cep" value=""><br>
+
+
+
+        </fieldset>
+        <input class= botao type="submit" value="Cadastrar">
+        </form>
+    </div>
+</body>
