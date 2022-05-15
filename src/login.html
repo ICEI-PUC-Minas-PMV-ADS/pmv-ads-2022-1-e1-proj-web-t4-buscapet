@@ -90,9 +90,14 @@ const login = () => {
     (localStoragePassword != null && localStoragePassword != undefined) &&
     (localStorageEmail == email && localStoragePassword == password)
     ) {
-      alert("login realizado com sucesso !")
+      alert(`login realizado com sucesso !`)
+      var location = `${window.location}`;
+      location = location.replace("login", "home");
+      window.location.replace(location);
     } else {
       alert(`Usuário não encontrado !`)
+      email = document.getElementById("login_email").value = "";
+      senha = document.getElementById("login_password").value = "";
     }
 }
 
@@ -129,6 +134,8 @@ const register = () => {
       email = document.getElementById("registeremail").value = "";
       senha = document.getElementById("registersenha").value = "";
 
+      alert(`cadastro realizado com sucesso !`)
+      openLoginArea('login')
 
     }
 }
