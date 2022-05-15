@@ -1,74 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
+
 <body>
-    <h1 id="titulo"></h1>
-    <button id="descricao"></button>
-    <table>
+  <div class="wrapper">
+    <div class="nav">
+      <div id="start-menu">
+        <button class="nav-menu-button">
+          <i class="material-icons">menu</i>
+        </button>
+          <a>Busca Pet</a>
+      </div>
+
+      
+      <button class="nav-menu-button">
+        <i class="material-icons">group</i>
+      </button>
+    </div>
+    <div class="page_header">
+      <h1>Pets Encontrados</h1>
+
+      <button class="button">
+        Cadastrar um pet
+      </button>
+
+    </div>
+    <div class="table_grid">
+      <div class="table_header">
+        <h1>Pets cadastrados recentementes</h1>
+      <div id="table-icons">
+        <button class="table-button"><i class="material-icons">search</i></button>
+        <button class="table-button"><i class="material-icons">cloud</i></button>
+        <button class="table-button"><i class="material-icons">print</i></button>
+      </div>
+    </div>
+      <table id="pets">
         <tr>
-            <th>Espécie</th>
-            <th>Tamanho</th>
-            <th>Cor</th>
-            <th>Observação</th>
+          <th>Espécie</th>
+          <th>Tamanho</th>
+          <th>Cor</th>
+          <th>Observações</th>
         </tr>
         <tr>
-            <td> Gato </td>
-            <td> Grande </td>
-            <td> Preto </td>
-            <td> Sem rabo </td>           
+          <td>Gato</td>
+          <td>Pequeno</td>
+          <td>Branco</td>
+          <td>Saudável com coleira</td>
         </tr>
-        
-    </table>
+        <tr>
+          <td>Gato</td>
+          <td>Grande</td>
+          <td>Preto</td>
+          <td>Sem rabo</td>
+        </tr>
+        <tr>
+          <td>Cachorro</td>
+          <td>Grande</td>
+          <td>Caramelo</td>
+          <td>Mancando</td>
+        </tr>
+        <tr>
+          <td>Calopsita</td>
+          <td>Pequena</td>
+          <td>Branca</td>
+          <td>Asas cortadas com identificação</td>
+        </tr>
+        <tr>
+          <td>Cachorro</td>
+          <td>Médio</td>
+          <td>Branco</td>
+          <td>Saudável</td>
+        </tr>
+        <tr>
+          <td>Hamster</td>
+          <td>Pequeno</td>
+          <td>Cinza</td>
+          <td>Saudável</td>
+        </tr>
+        <tr>
+          <td>Cachorro</td>
+          <td>Grande</td>
+          <td>Caramelo</td>
+          <td>Debilitada</td>
+        </tr>
+        <tr>
+          <td>Gato</td>
+          <td>Pequeno</td>
+          <td>Branco</td>
+          <td>Saudável</td>
+        </tr>
+        <tr>
+          <td>Gato</td>
+          <td>Grande</td>
+          <td>Preto</td>
+          <td>Sem rabo bastante ofegante</td>
+        </tr>
+        <tr>
+          <td>Cachorro</td>
+          <td>Grande</td>
+          <td>Caramelo</td>
+          <td>Mancando e muito debilitada</td>
+        </tr>
+      </table>
+
+    </div>
+
+  </div>
+
 </body>
+
 <script>
-    localStorage.setItem("TITULO","PETS ENCONTRADOS")
-    const titulo = localStorage.getItem ("TITULO")
-    document.getElementById('titulo').innerHTML = titulo
+  localStorage.setItem("TITULO", "PETS ENCONTRADOS")
+  const titulo = localStorage.getItem("TITULO")
+  document.getElementById('titulo').innerHTML = titulo
 
-    localStorage.setItem("butaocadastarpet","Cadastrar um pet")
-    const descritivobutao = localStorage.getItem ("butaocadastarpet")
-    document.getElementById('descricao').innerHTML = descritivobutao
-
-
-const pets = [
-    { 
-    especie: "Gato",
-    tamanho:"Pequeno",
-    cor: "Branco",
-    observacao: "Saudável"
-    }, 
-    { 
-    especie: "Gato",
-    tamanho:"Pequeno",
-    cor: "Branco",
-    observacao: "Saudável"
-    }, 
-    { 
-    especie: "Gato",
-    tamanho:"Pequeno",
-    cor: "Branco",
-    observacao: "Saudável"
-    }, 
-    { 
-    especie: "Gato",
-    tamanho:"Pequeno",
-    cor: "Branco",
-    observacao: "Saudável"
-    }, 
-    { 
-    especie: "Gato",
-    tamanho:"Pequeno",
-    cor: "Branco",
-    observacao: "Saudável"
-    }, 
-    
-]
-    localStorage.setItem("pets", JSON.stringify(pets))
+  localStorage.setItem("butaocadastarpet", "Cadastrar um pet")
+  const descritivobutao = localStorage.getItem("butaocadastarpet")
+  document.getElementById('descricao').innerHTML = descritivobutao
 
 
 </script>
