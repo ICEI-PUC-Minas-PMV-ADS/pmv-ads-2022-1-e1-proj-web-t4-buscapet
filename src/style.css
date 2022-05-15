@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 400;
+  line-height: 1.58;
+  letter-spacing: -.003em;
+  font-size: 20px;
+  padding: 0px;
+  margin: 0px;
+}
+
+#pets {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#pets td,
+#pets th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#pets tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#pets tr:hover {
+  background-color: rgb(221, 221, 221);
+}
+
+#pets th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  background-color: #f2f2f2;
+  grid-auto-rows: minmax(50px, auto);
+}
+
+.nav {
+  grid-column: 1/ 12;
+  z-index: 1;
+  grid-row: 1;
+  background-color: orange;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 1px 4px rgb(100 116 139 / 12%)
+}
+
+.nav > #start-menu {
+  display: flex; 
+  gap: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav > #start-menu > a {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+
+.page_header {
+  grid-column: 2 / 12;
+  grid-row: 2;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.page_header > h1 {
+  color: #bbb9b9;
+  font-size: 30px;
+}
+
+.page_header > h1 {
+  color: #bbb9b9;
+  font-size: 30px;
+}
+
+.table_grid {
+  grid-column: 2/12;
+  grid-row: 3 / 5;
+  background-color:white;
+  font-size: 10px;
+  display: inline;
+  justify-content: space-around;
+   
+}
+
+
+.button {
+  background-color: rebeccapurple;
+  /*Botao cadastar*/
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.nav-menu-button {
+  background-color: transparent;
+  /*Botao cadastar*/
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.nav-menu-button > a {
+  font-weight: bold;
+}
+
+
+.table_header {
+  grid-column: 1/ 12;
+  z-index: 1;
+  grid-row: 1;
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 1px 4px rgb(100 116 139 / 12%)
+}
+
+.table_header > table-icons {
+  display: flex; 
+  gap: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.table-button {
+  background-color: transparent;
+  /*Botao cadastar*/
+  border: none;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
