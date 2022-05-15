@@ -29,7 +29,7 @@
     <div class="page_header">
       <h1>Pets Encontrados</h1>
 
-      <button class="button">
+      <button class="button" onclick="cadastrar_pet()" >
         Cadastrar um pet
       </button>
 
@@ -127,7 +127,11 @@
   const descritivobutao = localStorage.getItem("butaocadastarpet")
   document.getElementById('descricao').innerHTML = descritivobutao
 
-
+  function cadastrar_pet() {
+    var location = `${window.location}`;
+    location = location.replace("home", "cadastrarpet");
+    window.location.replace(location);
+  }
 </script>
 
 </html>
