@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,244 +8,249 @@
     <title>Cadastrar Pet</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-body{
-background-color: #f2f2f2;
-font-family: 'Poppins', sans-serif;
-color: rgba(0, 0, 0, 0.8);
-font-weight: 400;
-line-height: 1.58;
-letter-spacing: -.003em;
-font-size: 20px;
-padding: 0px;
-margin: 0px;
-}
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Poppins', sans-serif;
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: 400;
+            line-height: 1.58;
+            letter-spacing: -.003em;
+            font-size: 20px;
+            padding: 0px;
+            margin: 0px;
+        }
 
-.button{  
-  background-color: rebeccapurple;
-  border: none;
-  color: white;
-  padding: 13px 205px;
-  margin: -20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
-  cursor: pointer;
-  border-radius: 6px;
-  position: absolute;
-  right: 8.4%;
-  top: 105%;
-}
+        .button {
+            background-color: rebeccapurple;
+            border: none;
+            color: white;
+            padding: 13px 205px;
+            margin: -20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
+            cursor: pointer;
+            border-radius: 6px;
+            position: absolute;
+            right: 8.4%;
+            top: 105%;
+        }
 
-#titulo{
-  color: #bbb9b9;
-  font-size: 18px;
-    color: #bbb9b9;
-    position: absolute;
-    right: 72%;
-    top: 15%;
-    font-family: 'Poppins', sans-serif
-}
+        #titulo {
+            color: #bbb9b9;
+            font-size: 18px;
+            color: #bbb9b9;
+            position: absolute;
+            right: 72%;
+            top: 15%;
+            font-family: 'Poppins', sans-serif
+        }
 
-#tituloform1{
-    font-weight: bold;
-    opacity: 0.8;
-}
+        #tituloform1 {
+            font-weight: bold;
+            opacity: 0.8;
+        }
 
-#tituloform2{
-    font-weight: bold;
-    opacity: 0.8;
-}
+        #tituloform2 {
+            font-weight: bold;
+            opacity: 0.8;
+        }
 
-#form1{
-    /*Formulário de caracteristicas*/
-    display: inline-table;
-    width: 500px;
-    line-height: 1.30;
-    background-color: white;
-    position: absolute;
-    top: 30%;
-    right: 50%;
-    padding: 15px;
-    padding-top: 25px;
-    border-radius: 4px;
-    font-size: 18px;
-    box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
+        #form1 {
+            /*Formulário de caracteristicas*/
+            display: inline-table;
+            width: 500px;
+            line-height: 1.30;
+            background-color: white;
+            position: absolute;
+            top: 30%;
+            right: 50%;
+            padding: 15px;
+            padding-top: 25px;
+            border-radius: 4px;
+            font-size: 18px;
+            box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
 
-}
+        }
 
-#form2{
-    /*Formulário com a ultima localização*/
-    display: inline-table;
-    width: 500px;
-    line-height: 1.30;
-    background-color: white;
-    position: absolute;
-    top: 30%;
-    right: 6%;
-    padding: 15px;
-    padding-top: 25px;
-    border-radius: 4px;
-    font-size: 18px;
-    box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
-}
-
-
-input[type=text] {
-    /*Linhas amarelas que o usúario preenche*/
-      width: 100%;
-      padding: 0px 0px;
-      margin: 0px 0;
-      box-sizing: border-box;
-      border: none;
-      border-bottom: 2px solid orange;
-} 
+        #form2 {
+            /*Formulário com a ultima localização*/
+            display: inline-table;
+            width: 500px;
+            line-height: 1.30;
+            background-color: white;
+            position: absolute;
+            top: 30%;
+            right: 6%;
+            padding: 15px;
+            padding-top: 25px;
+            border-radius: 4px;
+            font-size: 18px;
+            box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
+        }
 
 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  background-color: #f2f2f2;
-  grid-auto-rows: minmax(50px, auto);
-}
-
-.nav {
-  grid-column: 1/ 12;
-  z-index: 1;
-  grid-row: 1;
-  background-color: orange;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0px 1px 4px rgb(100 116 139 / 12%)
-}
-
-.nav > #start-menu {
-  display: flex; 
-  gap: 0px;
-  margin: 0px;
-  padding: 0px;
-}
-
-.nav > #start-menu > a {
-  margin: 0px;
-  padding: 0px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.nav-menu-button > a {
-  font-weight: bold;
-}
-
-.nav-menu-button {
-  background-color: transparent;
-  /*Botões da barra de navegação*/
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-#msgError{
-text-align: center;
-color: red;
-background-color: #ffbbbb;
-font-family: 'Poppins', sans-serif;
-font-weight: 400;
-line-height: 1.58;
-letter-spacing: -.003em;
-font-size: 20px;
-padding: 10px;
-border-radius: 4px;
-display: none;
-margin: 0px;
-}
-
-#msgSucess{
-text-align: center;
-color: green;
-background-color: #bbffbe;
-font-family: 'Poppins', sans-serif;
-font-weight: 400;
-line-height: 1.58;
-letter-spacing: -.003em;
-font-size: 20px;
-padding: 10px;
-border-radius: 4px;
-display: none;
-margin: 0px;   
-}
+        input[type=text] {
+            /*Linhas amarelas que o usúario preenche*/
+            width: 100%;
+            padding: 0px 0px;
+            margin: 0px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid orange;
+        }
 
 
-</style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            background-color: #f2f2f2;
+            grid-auto-rows: minmax(50px, auto);
+        }
+
+        .nav {
+            grid-column: 1/ 12;
+            z-index: 1;
+            grid-row: 1;
+            background-color: orange;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0px 1px 4px rgb(100 116 139 / 12%)
+        }
+
+        .nav>#start-menu {
+            display: flex;
+            gap: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .nav>#start-menu>a {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .nav-menu-button>a {
+            font-weight: bold;
+        }
+
+        .nav-menu-button {
+            background-color: transparent;
+            /*Botões da barra de navegação*/
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        #msgError {
+            /*Mensagem de erro*/
+            text-align: center;
+            color: red;
+            background-color: #ffbbbb;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            line-height: 1.58;
+            letter-spacing: -.003em;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+            margin: 0px;
+        }
+
+        #msgSucess {
+            /*Mensagem de sucesso*/
+            text-align: center;
+            color: green;
+            background-color: #bbffbe;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            line-height: 1.58;
+            letter-spacing: -.003em;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+            margin: 0px;
+        }
+    </style>
 </head>
 
 
 <body>
     <div class="wrapper">
         <div class="nav">
-          <div id="start-menu">
+            <div id="start-menu">
+                <button class="nav-menu-button">
+                    <i class="material-icons">menu</i>
+                </button>
+                <a>Busca Pet</a>
+            </div>
+
+
             <button class="nav-menu-button">
-              <i class="material-icons">menu</i>
+                <i class="material-icons">group</i>
             </button>
-              <a>Busca Pet</a>
-          </div>
-    
-          
-          <button class="nav-menu-button">
-            <i class="material-icons">group</i>
-          </button>
         </div>
     </div>
 
     <div id="titulo">
-        <h1>Cadastrar Pet</h1> </div>
+        <h1>Cadastrar Pet</h1>
+    </div>
 
-        <div id="msgError"></div>
-        <div id="msgSucess"></div>
+    <div id="msgError"></div>
+    <div id="msgSucess"></div>
 
     <div id="form1">
-        <div id="tituloform1"><legend>Características do Animal</legend></div> <br><br>
+        <div id="tituloform1">
+            <legend>Características do Animal</legend>
+        </div> <br><br>
         <form name="form_cadastro" action="do_cadastro.html" method="post">
-            <label id= lEspecie for="Especie">Espécie</label><br>
+            <label id=lEspecie for="Especie">Espécie</label><br>
             <input type="text" id="Especie" name="Especie"><br><br>
-            <label id= lTamanho for="Tamanho">Tamanho</label><br>
+            <label id=lTamanho for="Tamanho">Tamanho</label><br>
             <input type="text" id="Tamanho" name="Tamanho"><br><br>
-            <label id= lCor for="Cor">Cor</label><br>
+            <label id=lCor for="Cor">Cor</label><br>
             <input type="text" id="Cor" name="Cor"><br><br>
-            <label id= lRiscodevida for="Riscodevida">Risco de vida</label><br>
+            <label id=lRiscodevida for="Riscodevida">Risco de vida</label><br>
             <input type="text" id="Riscodevida" name="Riscodevida"><br><br>
-            <label id= lObservação for="Observação">Observação</label><br>
+            <label id=lObservação for="Observação">Observação</label><br>
             <input type="text" id="Observação" name="Observação"><br><br>
 
     </div>
 
     <div id="form2">
-            <div id="tituloform2"><legend> Última localização Conhecida</legend></div><br><br>
-            <label id= lCidade for="Cidade">Cidade</label><br>
-            <input type="text" id="Cidade" name="Cidade"><br><br>            
-            <label id= lBairro for="Bairro">Bairro</label><br>
-            <input type="text" id="Bairro" name="Bairro"><br><br>        
-            <label id= lRua for="Rua">Rua</label><br>
-            <input type="text" id="Rua" name="Rua"><br><br> 
-            <label id= lComplemento for="Complemento">Complemento</label><br>
-            <input type="text" id="Complemento" name="Complemento"><br><br>       
-            <label id= lCep for="Cep">Cep</label><br>
-            <input type="text" id="Cep" name="Cep"><br><br>
+        <div id="tituloform2">
+            <legend> Última localização Conhecida</legend>
+        </div><br><br>
+        <label id=lCidade for="Cidade">Cidade</label><br>
+        <input type="text" id="Cidade" name="Cidade"><br><br>
+        <label id=lBairro for="Bairro">Bairro</label><br>
+        <input type="text" id="Bairro" name="Bairro"><br><br>
+        <label id=lRua for="Rua">Rua</label><br>
+        <input type="text" id="Rua" name="Rua"><br><br>
+        <label id=lComplemento for="Complemento">Complemento</label><br>
+        <input type="text" id="Complemento" name="Complemento"><br><br>
+        <label id=lCep for="Cep">Cep</label><br>
+        <input type="text" id="Cep" name="Cep"><br><br>
 
-     </form>
+        </form>
     </div>
 
     <div id="botao">
@@ -254,240 +260,241 @@ margin: 0px;
 </body>
 <script>
 
-let Especie = document.querySelector('#Especie')
-let lEspecie = document.querySelector('#lEspecie')
-let validEspecie = false
+    let Especie = document.querySelector('#Especie')
+    let lEspecie = document.querySelector('#lEspecie')
+    let validEspecie = false
 
 
-let Tamanho = document.querySelector('#Tamanho')
-let lTamanho = document.querySelector('#lTamanho')
-let validTamanho = false
+    let Tamanho = document.querySelector('#Tamanho')
+    let lTamanho = document.querySelector('#lTamanho')
+    let validTamanho = false
 
 
-let Cor = document.querySelector('#Cor')
-let lCor = document.querySelector('#lCor')
-let validCor = false
+    let Cor = document.querySelector('#Cor')
+    let lCor = document.querySelector('#lCor')
+    let validCor = false
 
 
-let Riscodevida = document.querySelector('#Riscodevida')
-let lRiscodevida = document.querySelector('#lRiscodevida')
-let validRiscodevida = false
+    let Riscodevida = document.querySelector('#Riscodevida')
+    let lRiscodevida = document.querySelector('#lRiscodevida')
+    let validRiscodevida = false
 
 
-let Observação = document.querySelector('#Observação')
-let lObservação = document.querySelector('#lObservação')
-let validObservação = false
+    let Observação = document.querySelector('#Observação')
+    let lObservação = document.querySelector('#lObservação')
+    let validObservação = false
 
 
-let Cidade = document.querySelector('#Cidade')
-let lCidade = document.querySelector('#lCidade')
-let validCidade = false
+    let Cidade = document.querySelector('#Cidade')
+    let lCidade = document.querySelector('#lCidade')
+    let validCidade = false
 
 
-let Bairro = document.querySelector('#Bairro')
-let lBairro = document.querySelector('#lBairro')
-let validBairro = false
+    let Bairro = document.querySelector('#Bairro')
+    let lBairro = document.querySelector('#lBairro')
+    let validBairro = false
 
 
-let Rua = document.querySelector('#Rua')
-let lRua = document.querySelector('#lRua')
-let validRua = false
+    let Rua = document.querySelector('#Rua')
+    let lRua = document.querySelector('#lRua')
+    let validRua = false
 
 
-let Complemento = document.querySelector('#Complemento')
-let lComplemento = document.querySelector('#lComplemento')
-let validComplemento = false
+    let Complemento = document.querySelector('#Complemento')
+    let lComplemento = document.querySelector('#lComplemento')
+    let validComplemento = false
 
 
-let Cep = document.querySelector('#Cep')
-let lCep = document.querySelector('#lCep')
-let validCep = false
+    let Cep = document.querySelector('#Cep')
+    let lCep = document.querySelector('#lCep')
+    let validCep = false
 
 
-let msgError = document.querySelector('#msgError')
-let msgSucess = document.querySelector('#msgSucess')
+    let msgError = document.querySelector('#msgError')
+    let msgSucess = document.querySelector('#msgSucess')
 
 
-Especie.addEventListener('keyup',() => {
-if(Especie.value.length <= 2){
-    lEspecie.setAttribute('style', 'color:red')
-    lEspecie.innerHTML = 'Espécie *Insira no mínimo 3 caracteres'
-    validEspecie = false
+    Especie.addEventListener('keyup', () => {
+        if (Especie.value.length <= 2) {
+            lEspecie.setAttribute('style', 'color:red')
+            lEspecie.innerHTML = 'Espécie *Insira no mínimo 3 caracteres'
+            validEspecie = false
 
-} else {
-    lEspecie.setAttribute('style', 'color:green')
-    lEspecie.innerHTML = 'Espécie'
-    validEspecie = true
-}
-})
+        } else {
+            lEspecie.setAttribute('style', 'color:green')
+            lEspecie.innerHTML = 'Espécie'
+            validEspecie = true
+        }
+    })
 
-Tamanho.addEventListener('keyup',() => {
-if(Tamanho.value.length <= 2){
-    lTamanho.setAttribute('style', 'color:red')
-    lTamanho.innerHTML = 'Tamanho *Insira no mínimo 3 caracteres'
-    validTamanho = false
+    Tamanho.addEventListener('keyup', () => {
+        if (Tamanho.value.length <= 2) {
+            lTamanho.setAttribute('style', 'color:red')
+            lTamanho.innerHTML = 'Tamanho *Insira no mínimo 3 caracteres'
+            validTamanho = false
 
-} else {
-    lTamanho.setAttribute('style', 'color:green')
-    lTamanho.innerHTML = 'Tamanho'
-    validTamanho = true
-}
-})
+        } else {
+            lTamanho.setAttribute('style', 'color:green')
+            lTamanho.innerHTML = 'Tamanho'
+            validTamanho = true
+        }
+    })
 
-Cor.addEventListener('keyup',() => {
-if(Cor.value.length <= 2){
-    lCor.setAttribute('style', 'color:red')
-    lCor.innerHTML = 'Cor *Insira no mínimo 3 caracteres'
-    validCor = false
-} else {
-    lCor.setAttribute('style', 'color:green')
-    lCor.innerHTML = 'Cor'
-    validCor = true
-}
-})
+    Cor.addEventListener('keyup', () => {
+        if (Cor.value.length <= 2) {
+            lCor.setAttribute('style', 'color:red')
+            lCor.innerHTML = 'Cor *Insira no mínimo 3 caracteres'
+            validCor = false
+        } else {
+            lCor.setAttribute('style', 'color:green')
+            lCor.innerHTML = 'Cor'
+            validCor = true
+        }
+    })
 
-Riscodevida.addEventListener('keyup',() => {
-if(Riscodevida.value.length <= 2){
-    lRiscodevida.setAttribute('style', 'color:red')
-    lRiscodevida.innerHTML = 'Risco de Vida *Insira no mínimo 3 caracteres'
-    validRiscodevida = false
+    Riscodevida.addEventListener('keyup', () => {
+        if (Riscodevida.value.length <= 2) {
+            lRiscodevida.setAttribute('style', 'color:red')
+            lRiscodevida.innerHTML = 'Risco de Vida *Insira no mínimo 3 caracteres'
+            validRiscodevida = false
 
-} else {
-    lRiscodevida.setAttribute('style', 'color:green')
-    lRiscodevida.innerHTML = 'Risco de Vida'
-    validRiscodevida = true
-}
-})
+        } else {
+            lRiscodevida.setAttribute('style', 'color:green')
+            lRiscodevida.innerHTML = 'Risco de Vida'
+            validRiscodevida = true
+        }
+    })
 
-Observação.addEventListener('keyup',() => {
-if(Observação.value.length <= 5){
-    lObservação.setAttribute('style', 'color:red')
-    lObservação.innerHTML = 'Observação *Insira no mínimo 5 caracteres'
-    validObservação = false
+    Observação.addEventListener('keyup', () => {
+        if (Observação.value.length <= 5) {
+            lObservação.setAttribute('style', 'color:red')
+            lObservação.innerHTML = 'Observação *Insira no mínimo 5 caracteres'
+            validObservação = false
 
-} else {
-    lObservação.setAttribute('style', 'color:green')
-    lObservação.innerHTML = 'Observação'
-    validObservação = true
-}
-})
+        } else {
+            lObservação.setAttribute('style', 'color:green')
+            lObservação.innerHTML = 'Observação'
+            validObservação = true
+        }
+    })
 
-Cidade.addEventListener('keyup',() => {
-if(Cidade.value.length <= 2){
-    lCidade.setAttribute('style', 'color:red')
-    lCidade.innerHTML = 'Cidade *Insira no mínimo 3 caracteres'
-    validCidade = false
+    Cidade.addEventListener('keyup', () => {
+        if (Cidade.value.length <= 2) {
+            lCidade.setAttribute('style', 'color:red')
+            lCidade.innerHTML = 'Cidade *Insira no mínimo 3 caracteres'
+            validCidade = false
 
-} else {
-    lCidade.setAttribute('style', 'color:green')
-    lCidade.innerHTML = 'Cidade'
-    validCidade = true
-}
-})
-
-
-Bairro.addEventListener('keyup',() => {
-if(Bairro.value.length <= 2){
-    lBairro.setAttribute('style', 'color:red')
-    lBairro.innerHTML = 'Bairro *Insira no mínimo 3 caracteres'
-    validBairro = false
-
-} else {
-    lBairro.setAttribute('style', 'color:green')
-    lBairro.innerHTML = 'Bairro'
-    validBairro = true
-}
-})
+        } else {
+            lCidade.setAttribute('style', 'color:green')
+            lCidade.innerHTML = 'Cidade'
+            validCidade = true
+        }
+    })
 
 
-Rua.addEventListener('keyup',() => {
-if(Rua.value.length <= 2){
-    lRua.setAttribute('style', 'color:red')
-    lRua.innerHTML = 'Rua *Insira no mínimo 3 caracteres'
-    validRua = false
+    Bairro.addEventListener('keyup', () => {
+        if (Bairro.value.length <= 2) {
+            lBairro.setAttribute('style', 'color:red')
+            lBairro.innerHTML = 'Bairro *Insira no mínimo 3 caracteres'
+            validBairro = false
 
-} else {
-    lRua.setAttribute('style', 'color:green')
-    lRua.innerHTML = 'Rua'
-    validRua = true
-}
-})
-
-
-Complemento.addEventListener('keyup',() => {
-if(Complemento.value.length <= 2){
-    lComplemento.setAttribute('style', 'color:red')
-    lComplemento.innerHTML = 'Complemento *Insira no mínimo 3 caracteres'
-    validComplemento = false
-
-} else {
-    lComplemento.setAttribute('style', 'color:green')
-    lComplemento.innerHTML = 'Complemento'
-    validComplemento = true
-}
-})
+        } else {
+            lBairro.setAttribute('style', 'color:green')
+            lBairro.innerHTML = 'Bairro'
+            validBairro = true
+        }
+    })
 
 
+    Rua.addEventListener('keyup', () => {
+        if (Rua.value.length <= 2) {
+            lRua.setAttribute('style', 'color:red')
+            lRua.innerHTML = 'Rua *Insira no mínimo 3 caracteres'
+            validRua = false
 
-Cep.addEventListener('keyup',() => {
-if(Cep.value.length <= 2){
-    lCep.setAttribute('style', 'color:red')
-    lCep.innerHTML = 'Cep *Insira no mínimo 3 caracteres'
-    validCep = false
+        } else {
+            lRua.setAttribute('style', 'color:green')
+            lRua.innerHTML = 'Rua'
+            validRua = true
+        }
+    })
 
-} else {
-    lCep.setAttribute('style', 'color:green')
-    lCep.innerHTML = 'Cep'
-    validCep = true
-}
-})
+
+    Complemento.addEventListener('keyup', () => {
+        if (Complemento.value.length <= 2) {
+            lComplemento.setAttribute('style', 'color:red')
+            lComplemento.innerHTML = 'Complemento *Insira no mínimo 3 caracteres'
+            validComplemento = false
+
+        } else {
+            lComplemento.setAttribute('style', 'color:green')
+            lComplemento.innerHTML = 'Complemento'
+            validComplemento = true
+        }
+    })
 
 
 
-function cadastrarpet(){
-if(validEspecie && validTamanho && validCor && validRiscodevida && validCidade && validBairro && validRua && validComplemento && validCep){
-    let listaPet = JSON.parse(localStorage.getItem('listaPet')
-    || '[]')
+    Cep.addEventListener('keyup', () => {
+        if (Cep.value.length <= 2) {
+            lCep.setAttribute('style', 'color:red')
+            lCep.innerHTML = 'Cep *Insira no mínimo 3 caracteres'
+            validCep = false
 
-    listaPet.push(
-{
-    especieCad: Especie.value,
-    tamanhoCad: Tamanho.value,
-    corCad: Cor.value,
-    riscodevidaCad: Riscodevida.value,
-    observaçãoCad: Observação.value,
-    cidadeCad: Cidade.value,
-    bairroCad: Bairro.value,
-    ruaCad: Rua.value,
-    complementoCad: Complemento.value,
-    cepCad: Cep.value
-
-}
-    )
-localStorage.setItem('listaPet', JSON.stringify(listaPet))
-
-
-    msgSucess.setAttribute('style', 'display: block')
-    msgSucess.innerHTML = '<strong> Pet Cadastrado com sucesso! </strong>'
-    msgError.setAttribute('style', 'display: none')
-    msgError.innerHTML = ''
-
-
-    window.location.href = 'http://127.0.0.1:5502/src/home.html'
-
-} else {
-    msgError.setAttribute('style', 'display: block')
-    msgError.innerHTML = '<strong> Preencha todos os campos corretamente... </strong>'
-    msgSucess.innerHTML = ''
-    msgSucess.setAttribute('style', 'display: none')
-
-
-}
-}
+        } else {
+            lCep.setAttribute('style', 'color:green')
+            lCep.innerHTML = 'Cep'
+            validCep = true
+        }
+    })
 
 
 
+    function cadastrarpet() {
+        if (validEspecie && validTamanho && validCor && validRiscodevida && validCidade && validBairro && validRua && validComplemento && validCep) {
+            let listaPet = JSON.parse(localStorage.getItem('listaPet')
+                || '[]')
 
-    
+            listaPet.push(
+                {
+                    especieCad: Especie.value,
+                    tamanhoCad: Tamanho.value,
+                    corCad: Cor.value,
+                    riscodevidaCad: Riscodevida.value,
+                    observaçãoCad: Observação.value,
+                    cidadeCad: Cidade.value,
+                    bairroCad: Bairro.value,
+                    ruaCad: Rua.value,
+                    complementoCad: Complemento.value,
+                    cepCad: Cep.value
+
+                }
+            )
+            localStorage.setItem('listaPet', JSON.stringify(listaPet))
+
+
+            msgSucess.setAttribute('style', 'display: block')
+            msgSucess.innerHTML = '<strong> Pet Cadastrado com sucesso! </strong>'
+            msgError.setAttribute('style', 'display: none')
+            msgError.innerHTML = ''
+
+
+            window.location.href = 'http://127.0.0.1:5502/src/home.html'
+
+        } else {
+            msgError.setAttribute('style', 'display: block')
+            msgError.innerHTML = '<strong> Preencha todos os campos corretamente... </strong>'
+            msgSucess.innerHTML = ''
+            msgSucess.setAttribute('style', 'display: none')
+
+
+        }
+    }
+
+
+
+
+
 </script>
+
 </html>
