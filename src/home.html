@@ -45,71 +45,15 @@
     </div>
       <table id="pets">
         <tr>
-          <th>Espécie</th>
-          <th>Tamanho</th>
-          <th>Cor</th>
-          <th>Observações</th>
+          <th>especie</th>
+          <th>tamanho</th>
+          <th>cor</th>
+          <th>observacoes</th>
+          <th>Ações</th>
         </tr>
-        <tr>
-          <td>Gato</td>
-          <td>Pequeno</td>
-          <td>Branco</td>
-          <td>Saudável com coleira</td>
-        </tr>
-        <tr>
-          <td>Gato</td>
-          <td>Grande</td>
-          <td>Preto</td>
-          <td>Sem rabo</td>
-        </tr>
-        <tr>
-          <td>Cachorro</td>
-          <td>Grande</td>
-          <td>Caramelo</td>
-          <td>Mancando</td>
-        </tr>
-        <tr>
-          <td>Calopsita</td>
-          <td>Pequena</td>
-          <td>Branca</td>
-          <td>Asas cortadas com identificação</td>
-        </tr>
-        <tr>
-          <td>Cachorro</td>
-          <td>Médio</td>
-          <td>Branco</td>
-          <td>Saudável</td>
-        </tr>
-        <tr>
-          <td>Hamster</td>
-          <td>Pequeno</td>
-          <td>Cinza</td>
-          <td>Saudável</td>
-        </tr>
-        <tr>
-          <td>Cachorro</td>
-          <td>Grande</td>
-          <td>Caramelo</td>
-          <td>Debilitada</td>
-        </tr>
-        <tr>
-          <td>Gato</td>
-          <td>Pequeno</td>
-          <td>Branco</td>
-          <td>Saudável</td>
-        </tr>
-        <tr>
-          <td>Gato</td>
-          <td>Grande</td>
-          <td>Preto</td>
-          <td>Sem rabo bastante ofegante</td>
-        </tr>
-        <tr>
-          <td>Cachorro</td>
-          <td>Grande</td>
-          <td>Caramelo</td>
-          <td>Mancando e muito debilitada</td>
-        </tr>
+        <tbody id="your-table-body-id">
+
+        </tbody>
       </table>
 
     </div>
@@ -119,19 +63,107 @@
 </body>
 
 <script>
-  localStorage.setItem("TITULO", "PETS ENCONTRADOS")
-  const titulo = localStorage.getItem("TITULO")
-  document.getElementById('titulo').innerHTML = titulo
-
-  localStorage.setItem("butaocadastarpet", "Cadastrar um pet")
-  const descritivobutao = localStorage.getItem("butaocadastarpet")
-  document.getElementById('descricao').innerHTML = descritivobutao
 
   function cadastrar_pet() {
     var location = `${window.location}`;
     location = location.replace("home", "cadastrarpet");
     window.location.replace(location);
   }
+
+  let pets = [
+    {
+      especie: "Gato",
+      tamanho: "Pequeno",
+      cor: "Branco",
+      observacoes: "Saudável com coleira"
+    },
+    {
+      especie: "Gato",
+      tamanho: "Grande",
+      cor: "Preto",
+      observacoes: "Sem rabo"
+    },
+    {
+      especie: "Cachorro",
+      tamanho: "Grande",
+      cor: "Caramelo",
+      observacoes: "Mancando"
+    },
+    {
+      especie: "Calopsita",
+      tamanho: "Pequena",
+      cor: "Branca",
+      observacoes: "Asas cortadas com identificação"
+    },
+    {
+      especie: "Cachorro",
+      tamanho: "Médio",
+      cor: "Branco",
+      observacoes: "Saudável"
+    },
+    {
+      especie: "Hamster",
+      tamanho: "Pequeno",
+      cor: "Cinza",
+      observacoes: "Saudável"
+    },
+    {
+      especie: "Cachorro",
+      tamanho: "Grande",
+      cor: "Caramelo",
+      observacoes: "Debilitado"
+    },
+    {
+      especie: "Gato",
+      tamanho: "Pequeno",
+      cor: "Branco",
+      observacoes: "Saudável"
+    },
+    {
+      especie: "Gato",
+      tamanho: "Grande",
+      cor: "Preto",
+      observacoes: "Sem rabo bastante ofegante"
+
+    },
+    {
+      especie: "Cachorro",
+      tamanho: "Grande",
+      cor: "Caramelo",
+      observacoes: "Macando e muito debilitado"
+    } 
+  ]
+
+
+  localStorage.setItem("pets", JSON.stringify(pets))
+  leruaite = JSON.parse(localStorage.getItem("pets")) 
+
+function updateTableHTML(teste) {
+    let tableBody = document.getElementById("your-table-body-id");
+    let newRow; 
+    let newCell;
+
+      tableBody.innerHTML = "";
+
+      teste.map(linha => {
+        newRow = document.createElement("tr");
+        tableBody.appendChild(newRow);
+
+        
+
+        Object.values(linha).map(coluna => {
+          newCell = document.createElement("td");
+          newCell.textContent = coluna;
+          newRow.appendChild(newCell);
+        })
+      })
+
+
+}
+updateTableHTML(leruaite)
+
+
+
 </script>
 
 </html>

@@ -78,9 +78,9 @@
   </div>
 
 <script>
-const login = () => {
-  email = document.getElementById("login_email").value;
-  password = document.getElementById("login_password").value;
+function login() {
+  var email = document.getElementById("login_email").value;
+  var password = document.getElementById("login_password").value;
 
   var localStorageEmail = localStorage.getItem("email");
   var localStoragePassword = localStorage.getItem("senha");
@@ -101,7 +101,7 @@ const login = () => {
     }
 }
 
-const register = () => {
+function register () {
   email = document.getElementById("login_email").value;
   password = document.getElementById("login_password").value;
 
@@ -148,6 +148,7 @@ const register = () => {
     }
     document.getElementById(tabName).style.display = "block";  
   }
+
   </script>
 
 
