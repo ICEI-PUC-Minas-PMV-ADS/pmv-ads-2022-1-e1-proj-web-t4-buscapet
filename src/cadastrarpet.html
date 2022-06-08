@@ -158,6 +158,76 @@
             cursor: pointer;
         }
 
+        .nav-menu-button2 {
+            background-color: transparent;
+            /*Estilo Botões da barra lateral*/
+            border: none;
+            color: gray;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        #home {
+            background-color: transparent;
+            /*Botões da barra lateral*/
+            border: none;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            position: absolute;
+            top: 5%;
+        }
+
+        #add {
+            background-color: transparent;
+            /*Botões da barra lateral*/
+            border: none;
+            color: gray;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            position: absolute;
+            top: 15%;
+        }
+
+
+        #person {
+            background-color: transparent;
+            /*Botões da barra lateral*/
+            border: none;
+            color: gray;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            position: absolute;
+            top: 25%;
+        }
+
+        .barra_lateral {
+            background-color: white;
+            width: 7%;
+            height: 600px;
+            display: inline;
+            position: absolute;
+            top: 12.5%;
+            box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
+        }
+
         #msgError {
             /*Mensagem de erro*/
             text-align: center;
@@ -203,6 +273,27 @@
                 <a>Busca Pet</a>
             </div>
 
+            <div class="barra_lateral">
+                <div id="home">
+                    <button class="nav-menu-button2">
+                        <i class="material-icons">home</i>
+                    </button>
+                </div>
+
+
+                <div id="add">
+                    <button class="nav-menu-button2">
+                        <i class="material-icons">add_circle_outline</i>
+                    </button>
+                </div>
+
+
+                <div id="person">
+                    <button class="nav-menu-button2">
+                        <i class="material-icons">person</i>
+                    </button>
+                </div>
+            </div>
 
             <button class="nav-menu-button">
                 <i class="material-icons">group</i>
@@ -479,7 +570,7 @@
             msgError.innerHTML = ''
 
 
-            window.location.href = 'http://127.0.0.1:5502/src/home.html'
+            window.location.href = 'http://127.0.0.1:5501/src/home.html'
 
         } else {
             msgError.setAttribute('style', 'display: block')
