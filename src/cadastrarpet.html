@@ -468,14 +468,21 @@
         if (validEspecie && validTamanho && validCor && validRiscodevida && validObservacao && validCidade && validBairro && validRua && validComplemento && validCep) {
             let pets = JSON.parse(localStorage.getItem('pets')
                 || '[]')
-            let id = pets.map(pet => pet.id)
-            id = id.sort((a,b)=> b -a).shift()
 
-            if(id === undefined || id === null) {
-                id = 1
+            let ids = pets.map(pet => pet.id)
+            let id = ids.sort((a,b)=> b -a).shift()
+
+            if(params.modo == 'editar' && params.id != undefined && params.id != null) {
+                id = params.id
+                pets = pets.filter(pet => pet.id != id)
+
             } else {
-                id += 1
+                if(id === undefined || id === null) {
+                    id = 1
+                } else {
+                    id = id + 1
             }
+        }
 
             pets.push(
                 {
