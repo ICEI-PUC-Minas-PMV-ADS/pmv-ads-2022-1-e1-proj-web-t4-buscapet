@@ -30,7 +30,7 @@
       <h1>Pets Encontrados</h1>
 
       <button class="button" onclick="cadastrar_pet()" >
-        Cadastrar um pet
+        Cadastrar pet
       </button>
 
     </div>
@@ -43,73 +43,18 @@
         <button class="table-button"><i class="material-icons">print</i></button>
       </div>
     </div>
-      <table id="pets">
+      <table name="tablePets" id="tablePets">
         <tr>
-          <th>Espécie</th>
-          <th>Tamanho</th>
-          <th>Cor</th>
-          <th>Observações</th>
+          <th>Id</th>
+          <th>especie</th>
+          <th>tamanho</th>
+          <th>cor</th>
+          <th>observacoes</th>
+          <th>Ações</th>
         </tr>
-        <tr>
-          <td>Gato</td>
-          <td>Pequeno</td>
-          <td>Branco</td>
-          <td>Saudável com coleira</td>
-        </tr>
-        <tr>
-          <td>Gato</td>
-          <td>Grande</td>
-          <td>Preto</td>
-          <td>Sem rabo</td>
-        </tr>
-        <tr>
-          <td>Cachorro</td>
-          <td>Grande</td>
-          <td>Caramelo</td>
-          <td>Mancando</td>
-        </tr>
-        <tr>
-          <td>Calopsita</td>
-          <td>Pequena</td>
-          <td>Branca</td>
-          <td>Asas cortadas com identificação</td>
-        </tr>
-        <tr>
-          <td>Cachorro</td>
-          <td>Médio</td>
-          <td>Branco</td>
-          <td>Saudável</td>
-        </tr>
-        <tr>
-          <td>Hamster</td>
-          <td>Pequeno</td>
-          <td>Cinza</td>
-          <td>Saudável</td>
-        </tr>
-        <tr>
-          <td>Cachorro</td>
-          <td>Grande</td>
-          <td>Caramelo</td>
-          <td>Debilitada</td>
-        </tr>
-        <tr>
-          <td>Gato</td>
-          <td>Pequeno</td>
-          <td>Branco</td>
-          <td>Saudável</td>
-        </tr>
-        <tr>
-          <td>Gato</td>
-          <td>Grande</td>
-          <td>Preto</td>
-          <td>Sem rabo bastante ofegante</td>
-        </tr>
-        <tr>
-          <td>Cachorro</td>
-          <td>Grande</td>
-          <td>Caramelo</td>
-          <td>Mancando e muito debilitada</td>
-        </tr>
+        <tbody id="tbodyPets">
+
+        </tbody>
       </table>
 
     </div>
@@ -119,19 +64,127 @@
 </body>
 
 <script>
-  localStorage.setItem("TITULO", "PETS ENCONTRADOS")
-  const titulo = localStorage.getItem("TITULO")
-  document.getElementById('titulo').innerHTML = titulo
-
-  localStorage.setItem("butaocadastarpet", "Cadastrar um pet")
-  const descritivobutao = localStorage.getItem("butaocadastarpet")
-  document.getElementById('descricao').innerHTML = descritivobutao
 
   function cadastrar_pet() {
     var location = `${window.location}`;
     location = location.replace("home", "cadastrarpet");
-    window.location.replace(location);
+    location =`${location}?id=&modo=cadastrar`
+    window.location.href=location;
   }
+
+  function editar_pet(id) {
+    var location = `${window.location}`;
+    location = location.replace("home", "cadastrarpet");
+    location =`${location}?id=${id}&modo=editar`
+    window.location.href=location;
+  }
+
+  function visualizar_pet(id) {
+    var location = `${window.location}`;
+    location = location.replace("home", "cadastrarpet");
+    location =`${location}?id=${id}&modo=visualizar`
+    window.location.href=location;
+  }
+
+  function deletar_pet(id) {
+    var location = `${window.location}`;
+    location = location.replace("home", "cadastrarpet");
+    location =`${location}?id=${id}&modo=deletar`
+    window.location.href=location;
+  }
+
+  const pets = JSON.parse(localStorage.getItem("pets") || '[]') 
+
+
+function updateTablePets(pets) {
+    let table = document.getElementById("tablePets");
+    let tableBody = document.getElementById("tbodyPets");
+    let newRow; 
+    let newCell;
+
+      tableBody.innerHTML = "";
+
+      pets.map(linha => {
+        newRow = document.createElement("tr");
+        tableBody.appendChild(newRow);
+
+
+        for (let index = 0; index < 5; index++) {
+          coluna = Object.values(linha)[index]
+          let key = Object.keys(linha)[index]
+          let value = Object.values(linha)[index]
+
+          if(Object.keys(linha)[index] == 'id') {
+            newCell = document.createElement("td");
+            newCell.setAttribute('id',`${table.getAttribute('name')}_${key}_${value}`);
+            newCell.textContent = coluna;
+            newRow.appendChild(newCell);
+          } else {
+
+            newCell = document.createElement("td");
+            newCell.textContent = coluna;
+            newRow.appendChild(newCell);
+          }
+        }
+
+        let id = document.querySelector(`#tablePets_id_${linha.id}`).textContent;
+        div = document.createElement("div"); 
+        div.setAttribute('class','btn-group');
+        
+        ['editar', 'consultar', 'deletar'].map(type => createButton({type: type, appendChildEl: div, id: id}))
+
+        newRow.appendChild(div);
+      })
+
+      
+
+}
+
+
+const createButton = ({type: type, appendChildEl: div, id: id}) => {
+  switch(type) {
+    case 'editar':
+      btn = document.createElement("button"); 
+      btn.onclick = function(){
+      editar_pet(id)
+      return false;
+  };
+      btn.textContent = 'Editar';
+      btn.setAttribute('style', ` background-color: #107BFF; border: 1px solid #0553b3;`); 
+      div.appendChild(btn);
+      break;
+    case 'consultar':
+      btn = document.createElement("button");
+      btn = document.createElement("button"); 
+      btn.onclick = function(){
+        visualizar_pet(id)
+      return false;
+      }; 
+      btn.textContent = 'Consultar';
+      btn.setAttribute('style', ` background-color: #157347; border: 1px solid #0e643c;`); 
+      div.appendChild(btn); 
+      break;
+
+    case 'deletar':
+      btn = document.createElement("button"); 
+      btn.onclick = function(){
+        deletar_pet(id)
+      return false;
+      }; 
+      btn.textContent = 'Deletar';
+      btn.setAttribute('style', ` background-color: #DC3545; border: 1px solid #a52c38;`); 
+      div.appendChild(btn); 
+      break;
+  }
+
+  return div;
+}
+
+
+updateTablePets(pets)
+
+
+
 </script>
 
 </html>

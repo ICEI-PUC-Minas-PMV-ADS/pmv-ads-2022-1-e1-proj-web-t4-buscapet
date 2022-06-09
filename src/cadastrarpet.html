@@ -1,94 +1,678 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Pet</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-<style>
-body{
-    background-color: white;
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-}
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Poppins', sans-serif;
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: 400;
+            line-height: 1.58;
+            letter-spacing: -.003em;
+            font-size: 20px;
+            padding: 0px;
+            margin: 0px;
+        }
 
-#titulo{
-    display: grid;
-    font-family: Arial;
-    font-size: 35px;
-    color: orange;
-    text-align: center;
-}
+        .button {
+            background-color: rebeccapurple;
+            border: none;
+            color: white;
+            padding: 13px 205px;
+            margin: -20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
+            cursor: pointer;
+            border-radius: 6px;
+            position: absolute;
+            right: 8.4%;
+            top: 105%;
+        }
 
-#form{
-    font-size: 20px;
-    background-color: white;
-    color: black;
-    border: 1px solid orange;
-    margin: 40px;
-}
+        #titulo {
+            color: #bbb9b9;
+            font-size: 18px;
+            color: #bbb9b9;
+            position: absolute;
+            right: 72%;
+            top: 15%;
+            font-family: 'Poppins', sans-serif
+        }
 
-.botao{
-    font-family: arial;
-    background-color: white;
-    color: black;
-}
+        #tituloform1 {
+            font-weight: bold;
+            opacity: 0.8;
+        }
 
-input[type=text] {
-      width: 40%;
-      padding: 03px 10px;
-      margin: 0px 0;
-      box-sizing: border-box;
-      border: none;
-      border-bottom: 2px solid orange;
-}
+        #tituloform2 {
+            font-weight: bold;
+            opacity: 0.8;
+        }
 
-</style>
+        #form1 {
+            /*Formulário de caracteristicas*/
+            display: inline-table;
+            width: 500px;
+            line-height: 1.30;
+            background-color: white;
+            position: absolute;
+            top: 30%;
+            right: 50%;
+            padding: 15px;
+            padding-top: 25px;
+            border-radius: 4px;
+            font-size: 18px;
+            box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
 
+        }
+
+        #form2 {
+            /*Formulário com a ultima localização*/
+            display: inline-table;
+            width: 500px;
+            line-height: 1.30;
+            background-color: white;
+            position: absolute;
+            top: 30%;
+            right: 6%;
+            padding: 15px;
+            padding-top: 25px;
+            border-radius: 4px;
+            font-size: 18px;
+            box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
+        }
+
+
+        input[type=text] {
+            /*Linhas amarelas que o usúario preenche*/
+            width: 100%;
+            padding: 0px 0px;
+            margin: 0px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid orange;
+        }
+
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            background-color: #f2f2f2;
+            grid-auto-rows: minmax(50px, auto);
+        }
+
+        .nav {
+            grid-column: 1/ 12;
+            z-index: 1;
+            grid-row: 1;
+            background-color: orange;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0px 1px 4px rgb(100 116 139 / 12%)
+        }
+
+        .nav>#start-menu {
+            display: flex;
+            gap: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .nav>#start-menu>a {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .nav-menu-button>a {
+            font-weight: bold;
+        }
+
+        .nav-menu-button {
+            background-color: transparent;
+            /*Botões da barra de navegação*/
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        #msgError {
+            /*Mensagem de erro*/
+            text-align: center;
+            color: red;
+            background-color: #ffbbbb;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            line-height: 1.58;
+            letter-spacing: -.003em;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+            margin: 0px;
+        }
+
+        #msgSucess {
+            /*Mensagem de sucesso*/
+            text-align: center;
+            color: green;
+            background-color: #bbffbe;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            line-height: 1.58;
+            letter-spacing: -.003em;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+            margin: 0px;
+        }
+    </style>
 </head>
 
+
 <body>
-    <div id="titulo">
-        <h1>
-            Cadastrar Pet
-        </h1>
+    <div class="wrapper">
+        <div class="nav">
+            <div id="start-menu">
+                <button class="nav-menu-button">
+                    <i class="material-icons">menu</i>
+                </button>
+                <a>Busca Pet</a>
+            </div>
+
+
+            <button class="nav-menu-button">
+                <i class="material-icons">group</i>
+            </button>
+        </div>
     </div>
 
-    <div id="form">
-        <fieldset>
-            <legend> <strong> Características do Animal</strong></legend>
-            <form name="form_cadastro" action="do_cadastro.html" method="post">
-                Espécie: <input type="text" name="Espécie" value=""><br>
-                <label for="tamanho">Tamanho: </label><br>
-                <select name="tamanho">
-                    <option value="">Selecione um tamanho</option>
-                    <option value="Pequeno">Pequeno</option>
-                    <option value="Médio">Médio</option>
-                    <option value="Grande">Grande</option>
-                </select>
-                <br>
-                Cor: <input type="text" name="Cor" value=""><br>
-                Risco de vida: <br>
-                <input type="radio" name="Risco de vida" value="Baixo">Baixo<br>
-                <input type="radio" name="Risco de vida" value="Médio">Médio<br>
-                <input type="radio" name="Risco de vida" value="Alto">Alto<br>
-                <br>
+    <div id="titulo">
+        <h1 id="pageTitle">Cadastrar Pet</h1>
+    </div>
 
-                Observação: <br>
-                <textarea name="Observação" rows="4" cols="30"> Preencha com alguma Observação</textarea>
+    <div id="msgError"></div>
+    <div id="msgSucess"></div>
 
-        </fieldset>
-        <fieldset>
-            <br>
-            <legend><strong>Última Localização conhecida</strong></legend>
-            Cidade: <input type="text" name="Cidade" value=""><br>
-            Bairro: <input type="text" name="Bairro" value=""><br>
-            Rua: <input type="text" name="Rua" value=""><br>
-            Complemento: <input type="text" name="Complemento" value=""><br>
-            Cep: <input type="text" name="Cep" value=""><br>
+    <div id="form1">
+        <div id="tituloform1">
+            <legend>Características do Animal</legend>
+        </div> <br><br>
+        <form name="form_cadastro" action="do_cadastro.html" method="post">
+            <label id=lEspecie for="Especie">Espécie</label><br>
+            <input type="text" id="Especie" name="Especie"><br><br>
+            <label id=lTamanho for="Tamanho">Tamanho</label><br>
+            <input type="text" id="Tamanho" name="Tamanho"><br><br>
+            <label id=lCor for="Cor">Cor</label><br>
+            <input type="text" id="Cor" name="Cor"><br><br>
+            <label id=lRiscodevida for="Riscodevida">Risco de vida</label><br>
+            <input type="text" id="Riscodevida" name="Riscodevida"><br><br>
+            <label id=lObservacao for="Observacao">Observação</label><br>
+            <input type="text" id="Observacao" name="Observacao"><br><br>
 
+    </div>
 
+    <div id="form2">
+        <div id="tituloform2">
+            <legend> Última localização Conhecida</legend>
+        </div><br><br>
+        <label id=lCidade for="Cidade">Cidade</label><br>
+        <input type="text" id="Cidade" name="Cidade"><br><br>
+        <label id=lBairro for="Bairro">Bairro</label><br>
+        <input type="text" id="Bairro" name="Bairro"><br><br>
+        <label id=lRua for="Rua">Rua</label><br>
+        <input type="text" id="Rua" name="Rua"><br><br>
+        <label id=lComplemento for="Complemento">Complemento</label><br>
+        <input type="text" id="Complemento" name="Complemento"><br><br>
+        <label id=lCep for="Cep">Cep</label><br>
+        <input type="text" id="Cep" name="Cep"><br><br>
 
-        </fieldset>
-        <input class= botao type="submit" value="Cadastrar">
         </form>
     </div>
+
+    <div id="botao">
+
+        <button id="buttonPet" class="button" onclick='cadastrarpet()'>Cadastrar Pet</button>
+    </div>
 </body>
+<script>
+    
+    let pageTitle = document.querySelector('#pageTitle')
+
+
+    let Especie = document.querySelector('#Especie')
+    let lEspecie = document.querySelector('#lEspecie')
+    let validEspecie = false
+
+    
+
+
+    let Tamanho = document.querySelector('#Tamanho')
+    let lTamanho = document.querySelector('#lTamanho')
+    let validTamanho = false
+
+
+    let Cor = document.querySelector('#Cor')
+    let lCor = document.querySelector('#lCor')
+    let validCor = false
+
+
+    let Riscodevida = document.querySelector('#Riscodevida')
+    let lRiscodevida = document.querySelector('#lRiscodevida')
+    let validRiscodevida = false
+
+
+    let Observacao = document.querySelector('#Observacao')
+    let lObservacao = document.querySelector('#lObservacao')
+    let validObservacao = false
+
+
+    let Cidade = document.querySelector('#Cidade')
+    let lCidade = document.querySelector('#lCidade')
+    let validCidade = false
+
+
+    let Bairro = document.querySelector('#Bairro')
+    let lBairro = document.querySelector('#lBairro')
+    let validBairro = false
+
+
+    let Rua = document.querySelector('#Rua')
+    let lRua = document.querySelector('#lRua')
+    let validRua = false
+
+
+    let Complemento = document.querySelector('#Complemento')
+    let lComplemento = document.querySelector('#lComplemento')
+    let validComplemento = false
+
+
+    let Cep = document.querySelector('#Cep')
+    let lCep = document.querySelector('#lCep')
+    let validCep = false
+
+
+    let msgError = document.querySelector('#msgError')
+    let msgSucess = document.querySelector('#msgSucess')
+
+
+    Especie.addEventListener('keyup', () => {
+        if (Especie.value.length <= 2) {
+            lEspecie.setAttribute('style', 'color:red')
+            lEspecie.innerHTML = 'Espécie *Insira no mínimo 3 caracteres'
+            validEspecie = false
+
+        } else {
+            lEspecie.setAttribute('style', 'color:green')
+            lEspecie.innerHTML = 'Espécie'
+            validEspecie = true
+        }
+    })
+
+    Tamanho.addEventListener('keyup', () => {
+        if (Tamanho.value.length <= 2) {
+            lTamanho.setAttribute('style', 'color:red')
+            lTamanho.innerHTML = 'Tamanho *Insira no mínimo 3 caracteres'
+            validTamanho = false
+
+        } else {
+            lTamanho.setAttribute('style', 'color:green')
+            lTamanho.innerHTML = 'Tamanho'
+            validTamanho = true
+        }
+    })
+
+    Cor.addEventListener('keyup', () => {
+        if (Cor.value.length <= 2) {
+            lCor.setAttribute('style', 'color:red')
+            lCor.innerHTML = 'Cor *Insira no mínimo 3 caracteres'
+            validCor = false
+        } else {
+            lCor.setAttribute('style', 'color:green')
+            lCor.innerHTML = 'Cor'
+            validCor = true
+        }
+    })
+
+    Riscodevida.addEventListener('keyup', () => {
+        if (Riscodevida.value.length <= 2) {
+            lRiscodevida.setAttribute('style', 'color:red')
+            lRiscodevida.innerHTML = 'Risco de Vida *Insira no mínimo 3 caracteres'
+            validRiscodevida = false
+
+        } else {
+            lRiscodevida.setAttribute('style', 'color:green')
+            lRiscodevida.innerHTML = 'Risco de Vida'
+            validRiscodevida = true
+        }
+    })
+
+    Observacao.addEventListener('keyup', () => {
+        if (Observacao.value.length <= 5) {
+            lObservacao.setAttribute('style', 'color:red')
+            lObservacao.innerHTML = 'Observacao *Insira no mínimo 5 caracteres'
+            validObservacao = false
+
+        } else {
+            lObservacao.setAttribute('style', 'color:green')
+            lObservacao.innerHTML = 'Observacao'
+            validObservacao = true
+        }
+    })
+
+    Cidade.addEventListener('keyup', () => {
+        if (Cidade.value.length <= 2) {
+            lCidade.setAttribute('style', 'color:red')
+            lCidade.innerHTML = 'Cidade *Insira no mínimo 3 caracteres'
+            validCidade = false
+
+        } else {
+            lCidade.setAttribute('style', 'color:green')
+            lCidade.innerHTML = 'Cidade'
+            validCidade = true
+        }
+    })
+
+
+    Bairro.addEventListener('keyup', () => {
+        if (Bairro.value.length <= 2) {
+            lBairro.setAttribute('style', 'color:red')
+            lBairro.innerHTML = 'Bairro *Insira no mínimo 3 caracteres'
+            validBairro = false
+
+        } else {
+            lBairro.setAttribute('style', 'color:green')
+            lBairro.innerHTML = 'Bairro'
+            validBairro = true
+        }
+    })
+
+
+    Rua.addEventListener('keyup', () => {
+        if (Rua.value.length <= 2) {
+            lRua.setAttribute('style', 'color:red')
+            lRua.innerHTML = 'Rua *Insira no mínimo 3 caracteres'
+            validRua = false
+
+        } else {
+            lRua.setAttribute('style', 'color:green')
+            lRua.innerHTML = 'Rua'
+            validRua = true
+        }
+    })
+
+
+    Complemento.addEventListener('keyup', () => {
+        if (Complemento.value.length <= 2) {
+            lComplemento.setAttribute('style', 'color:red')
+            lComplemento.innerHTML = 'Complemento *Insira no mínimo 3 caracteres'
+            validComplemento = false
+
+        } else {
+            lComplemento.setAttribute('style', 'color:green')
+            lComplemento.innerHTML = 'Complemento'
+            validComplemento = true
+        }
+    })
+
+
+
+    Cep.addEventListener('keyup', () => {
+        if (Cep.value.length <= 2) {
+            lCep.setAttribute('style', 'color:red')
+            lCep.innerHTML = 'Cep *Insira no mínimo 3 caracteres'
+            validCep = false
+
+        } else {
+            lCep.setAttribute('style', 'color:green')
+            lCep.innerHTML = 'Cep'
+            validCep = true
+        }
+    })
+
+    function getParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        const modo = urlParams.get('modo');
+        const params = {id: id, modo: modo}
+        return params;
+    };
+
+
+    function cadastrarpet() {
+
+        params = getParams()
+        if (validEspecie && validTamanho && validCor && validRiscodevida && validObservacao && validCidade && validBairro && validRua && validComplemento && validCep) {
+            let pets = JSON.parse(localStorage.getItem('pets')
+                || '[]')
+
+            let ids = pets.map(pet => pet.id)
+            let id = ids.sort((a,b)=> b -a).shift()
+
+            if(params.modo == 'editar' && params.id != undefined && params.id != null) {
+                id = params.id
+                pets = pets.filter(pet => pet.id != id)
+
+            } else {
+                if(id === undefined || id === null) {
+                    id = 1
+                } else {
+                    id = id + 1
+            }
+        }
+
+            pets.push(
+                {
+                    id: id,
+                    especie: Especie.value,
+                    tamanho: Tamanho.value,
+                    cor: Cor.value,
+                    riscodevida: Riscodevida.value,
+                    observacao: Observacao.value,
+                    cidade: Cidade.value,
+                    bairro: Bairro.value,
+                    rua: Rua.value,
+                    complemento: Complemento.value,
+                    cep: Cep.value
+                }
+            )
+            localStorage.setItem('pets', JSON.stringify(pets))
+
+
+            if(params.id != undefined && params.id != null) {
+                msgSucess.setAttribute('style', 'display: block')
+                msgSucess.innerHTML = '<strong> Pet Atualizado com sucesso! </strong>'
+                msgError.setAttribute('style', 'display: none')
+                msgError.innerHTML = ''
+                cleanForm()
+            } else {
+                msgSucess.setAttribute('style', 'display: block')
+                msgSucess.innerHTML = '<strong> Pet Cadastrado com sucesso! </strong>'
+                msgError.setAttribute('style', 'display: none')
+                msgError.innerHTML = ''
+                cleanForm()
+            }
+
+
+     
+
+        } else {
+            msgError.setAttribute('style', 'display: block')
+            msgError.innerHTML = '<strong> Preencha todos os campos corretamente... </strong>'
+            msgSucess.innerHTML = ''
+            msgSucess.setAttribute('style', 'display: none')
+
+
+        }
+    }
+
+
+    function searchPet({id: id }) {
+        const pets = JSON.parse(localStorage.getItem('pets') || '[]')
+        const pet = pets.filter(pet => pet.id == id)
+        return pet
+    }
+
+    function deletarPet({id: id }) {
+        let pets = JSON.parse(localStorage.getItem('pets') || '[]')
+        pets = pets.filter(pet => pet.id != id)
+        localStorage.setItem('pets', JSON.stringify(pets))
+
+        msgSucess.setAttribute('style', 'display: block')
+        msgSucess.innerHTML = '<strong> Pet Deletado com sucesso! </strong>'
+        msgError.setAttribute('style', 'display: none')
+        msgError.innerHTML = ''
+    }
+
+    function editarPet({id: id}) {
+        const pets = JSON.parse(localStorage.getItem('pets') || '[]')
+        const pet = pets.filter(pet => pet.id == id)
+        
+        pet.map(pet => {
+            Especie.value = pet.especie;
+            Tamanho.value = pet.tamanho;
+            Cor.value = pet.cor;
+            Observacao.value = pet.observacoes;
+            Riscodevida.value = pet.riscodevida;
+            Cidade.value = pet.cidade;
+            Bairro.value = pet.bairro;
+            Rua.value = pet.rua;
+            Complemento.value = pet.complemento;
+            Cep.value = pet.cep;
+        })
+
+        pageTitle.textContent = 'Editar Pet'
+        buttonPet.textContent ="Atualizar Pet"
+
+        Especie.dispatchEvent(new Event('keyup'))
+        Tamanho.dispatchEvent(new Event('keyup'))
+        Cor.dispatchEvent(new Event('keyup'))
+        Riscodevida.dispatchEvent(new Event('keyup'))
+        Observacao.dispatchEvent(new Event('keyup'))
+        Cidade.dispatchEvent(new Event('keyup'))
+        Bairro.dispatchEvent(new Event('keyup'))
+        Rua.dispatchEvent(new Event('keyup'))
+        Complemento.dispatchEvent(new Event('keyup'))
+        Cep.dispatchEvent(new Event('keyup'))
+    }
+
+
+    function visualizarPet({id: id}) {
+        const pets = JSON.parse(localStorage.getItem('pets') || '[]')
+        const pet = pets.filter(pet => pet.id == id)
+        
+        pet.map(pet => {
+            Especie.value = pet.especie;
+            Tamanho.value = pet.tamanho;
+            Cor.value = pet.cor;
+            Observacao.value = pet.observacoes;
+            Riscodevida.value = pet.riscodevida;
+            Cidade.value = pet.cidade;
+            Bairro.value = pet.bairro;
+            Rua.value = pet.rua;
+            Complemento.value = pet.complemento;
+            Cep.value = pet.cep;
+
+            Especie.disabled = true;
+            Tamanho.disabled = true;
+            Cor.disabled = true;
+            Observacao.disabled = true;
+            Riscodevida.disabled = true;
+            Cidade.disabled = true;
+            Bairro.disabled = true;
+            Rua.disabled = true;
+            Complemento.disabled = true;
+            Cep.disabled = true;
+        })
+
+        pageTitle.textContent = 'Visualizar Pet'
+        buttonPet.setAttribute('style', 'display: none')
+
+        Especie.dispatchEvent(new Event('keyup'))
+        Tamanho.dispatchEvent(new Event('keyup'))
+        Cor.dispatchEvent(new Event('keyup'))
+        Riscodevida.dispatchEvent(new Event('keyup'))
+        Observacao.dispatchEvent(new Event('keyup'))
+        Cidade.dispatchEvent(new Event('keyup'))
+        Bairro.dispatchEvent(new Event('keyup'))
+        Rua.dispatchEvent(new Event('keyup'))
+        Complemento.dispatchEvent(new Event('keyup'))
+        Cep.dispatchEvent(new Event('keyup'))
+    }
+
+
+    function cleanForm() {
+        Especie.value = "";
+        Tamanho.value = "";
+        Cor.value = "";
+        Riscodevida.value = "";
+        Observacao.value = "";
+        Cidade.value = "";
+        Bairro.value = "";
+        Rua.value = "";
+        Complemento.value = "";
+        Cep.value = "";
+
+        pageTitle.textContent = 'Cadastrar Pet'
+        buttonPet.textContent ="Cadastrar Pet"
+
+    }
+
+    function identifyMode() {
+        params = getParams()
+        switch (params.modo) {
+            case 'editar':
+                editarPet({id: params.id})
+                break;
+
+            case 'cadastrar':
+                cleanForm()
+                break;
+
+            case 'deletar':
+                deletarPet({id: params.id})    
+                break;
+              
+            case 'visualizar':
+                visualizarPet({id: params.id}) 
+                break;
+            
+            default:
+                console.log('seila')
+                break;
+        }
+    }
+    identifyMode()
+
+    
+
+
+  
+
+
+</script>
+
+</html>
