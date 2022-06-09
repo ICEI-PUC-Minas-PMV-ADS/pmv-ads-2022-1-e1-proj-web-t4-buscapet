@@ -10,9 +10,7 @@ Busca Pet está sendo desenvolvido afim de ajudar no resgate e adoção de anima
 
 # Integrantes
 
-* Darielly Cristina de Souza Santos
 * Francisco Costa Ribeiro
-* Luiz Felipe Caudensk Mendes
 * Ricardo peixoto da Silva
 * Thais Gurgel Bezerra
 
