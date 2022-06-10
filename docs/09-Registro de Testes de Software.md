@@ -1,8 +1,36 @@
 # Registro de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>, <a href="8-Plano de Testes de Software.md"> Plano de Testes de Software</a>
+## REGISTROS DE TESTES COM SUCESSO:
 
-Relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado em um plano de testes pré-definido.
+
+1º TESTE - Cadastro de Usuário com sucesso:
+
+
+![teste criar conta - com sucesso](https://user-images.githubusercontent.com/103431797/173114229-30d2a9a0-9f07-45c1-a81a-f978631bfc67.gif)
+
+
+
+
+
+2º TESTE - Realizar Login com sucesso: 
+
+
+![teste de login  - com sucesso](https://user-images.githubusercontent.com/103431797/173114976-3fd2610b-738a-4fdf-b7c0-fc913488f0b3.gif)
+
+
+3º TESTE - Cadastro de animais com sucesso: 
+
+![teste cadastrar pet - com sucesso](https://user-images.githubusercontent.com/103431797/173115805-6868d621-243d-44ba-a0c2-1dd5b2c6e141.gif)
+
+
+
+
+
+
+
+
+
+
 
 ## Avaliação
 
