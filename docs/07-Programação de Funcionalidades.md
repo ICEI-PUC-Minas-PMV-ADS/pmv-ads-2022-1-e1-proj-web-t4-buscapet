@@ -8,7 +8,9 @@ A tela de login é a principal, pois apartir do momento em que o usuário realiz
 
 ![login](https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-buscapet/main/docs/img/tela%20login.png)
 
-Os dados são armazenados no LocalStorage.
+Ao realizar o cadastrado de usuário os dados são armazenados no LocalStorage conforme mostra na imgem abaixo.
+
+![cadastrousuario](https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-buscapet/main/docs/img/tela%20cadastro%20usuario.png)
 
 ![localstorage](https://raw.githubusercontent.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-1-e1-proj-web-t4-buscapet/main/docs/img/localstorage-login.png)
 
