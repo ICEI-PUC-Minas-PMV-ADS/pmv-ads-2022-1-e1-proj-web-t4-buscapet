@@ -1,6 +1,6 @@
 # Plano de Testes de Software
 
-## CASOS DE TESTES SUCESSO: 
+### CASOS DE TESTES SUCESSO: 
 <ol>
 
     |CASO DE TESTE| CT-01 – | Validação Tela Cadastro de Usuário e Login
@@ -40,7 +40,7 @@
     |      | 3) Será redirecionado para a tela Home onde será 
     |           possivel vizualizar a lista de animais cadastrados.| 
     |CRITÉRIO DE ÊXITO| Conseguir vizualizar a lista de todos os 
-animais cadastrados com suas devidas informações importantes. |
+    animais cadastrados com suas devidas informações importantes. |
  
 
     | CASO DE TESTE| CT-04 – | Visualização detalhada de um caso
@@ -53,7 +53,7 @@ animais cadastrados com suas devidas informações importantes. |
     |      | 3) Será redirecionado para a tela Home |
     |      | 4) Na tela Home clicar em "Consultar" no animal que deseja vizualizar cadastro|
     |      | 5) Será redirecionado para a tela onde será vizualizado 
-o cadastro selecionado.|
+            o cadastro selecionado.|
     |CRITÉRIO DE ÊXITO| Conseguir vizualizar o cadastro de animal escolhido |
  
     | CASO DE TESTE| CT-05 – | Remover caso
@@ -78,14 +78,11 @@ o cadastro selecionado.|
     |      | 3) Será redirecionado para a tela Home|
     |      | 4) Na tela Home clicar em "Editar" no animal que desej atualizar 
     |      | 5) Será redirecionado para a tela onde poderá 
-editar o pet selecionado  |
+                editar o pet selecionado  |
     |      | 6) Após as alterações clicar em "Atualizar Pet"
     |CRITÉRIO DE ÊXITO| Conseguir editar um caso cadastrado |
 
-
- 
- </ol>
-
+<ol>
  
 ## CASOS DE TESTE INSUCESSO: CT-01 (RF-001)
 <ol>
@@ -111,7 +108,8 @@ editar o pet selecionado  |
     |Passos           |2) Efetuar login|
     |                 |3) Será redirecionado para tela Home|
     |                 |4) Na tela Home clicar em "Cadastar Pet"|
-    |                 |5) Será redirecionado para a tela de cadastro de      animal|
+    |                 |5) Será redirecionado para a tela 
+                          de cadastro animal|
     |                 |6) Preencher formulário
     |Critérios de Êxito	|Para realizar o cadastro de animal deverá ser preenchido todo o formulário, caso não seja será emitido uma mensagem informado "Preencher todos os campos corretamente"|
  
