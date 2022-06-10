@@ -2,6 +2,7 @@
 
 ## CASOS DE TESTES SUCESSO: 
 <ol>
+
 |CASO DE TESTE| CT-01 – | Validação Tela Cadastro de Usuário e Login
 |--------------|------------------------|
 |REQUISITOS ASSOCIADOS	|RF-001|
@@ -13,8 +14,8 @@
 |                                                          |
 |CRITÉRIO DE ÊXITO| Após o cadastro realizado, 
 |o usuário poderá efetuar login clicando em "Entrar" |
-<ol>
-<ol> 
+
+ 
 |CASO DE TESTE |CT-02 – | Cadastro de animais
 |--------------|-------------------------------------|
 |REQUISITOS ASSOCIADOS	|RF-002 | 
@@ -32,8 +33,8 @@
 |                      |capaz de vizualiza-lo na tela Home |
 |	                   |Usuário será capaz de editar e vizualizar cadastro |
 |                 	   |Caso necessário será capaz de deletar cadastro |
-<ol> 
-<ol>
+ 
+ 
 |CASO DE TESTE| CT-03 – | Lista de aniamis cadastrados
 |--------------|------------------------|
 |REQUISITOS ASSOCIADOS	|RF-003|
@@ -46,8 +47,8 @@
 |                                                          |
 |CRITÉRIO DE ÊXITO| Conseguir vizualizar a lista de todos os 
 |animais cadastrados com suas devidas informações importantes. |
-<ol>
-<ol>
+ 
+
 | CASO DE TESTE| CT-04 – | Visualização detalhada de um caso
 |--------------|------------------------|
 |REQUISITOS ASSOCIADOS	|RF-007|
@@ -62,7 +63,7 @@
 |           o cadastro selecionado.|
 |                                                          |
 |CRITÉRIO DE ÊXITO| Conseguir vizualizar o cadastro de animal escolhido |
-<ol> 
+ 
 | CASO DE TESTE| CT-05 – | Remover caso
 |--------------|------------------------|
 |REQUISITOS ASSOCIADOS	|RF-010|
@@ -75,8 +76,8 @@
 |      | 5) Será exibido uma mensagem "Pet Deletado com Sucesso" |
 |                                                          |
 |CRITÉRIO DE ÊXITO| Conseguir deletar um caso cadastrado |
-<ol>
-<ol>
+
+
 | CASO DE TESTE| CT-05 – | Editar caso
 |--------------|------------------------|
 |REQUISITOS ASSOCIADOS	|RF-000|
@@ -91,11 +92,15 @@
 |      | 6) Após as alterações clicar em "Atualizar Pet"
 |                                                          |
 |CRITÉRIO DE ÊXITO| Conseguir editar um caso cadastrado |
-</ol>
+
+
+ 
+ </ol>
 
  
 ## CASOS DE TESTE INSUCESSO: CT-01 (RF-001)
-<ol> 
+<ol>
+ 
 |CASO DE TESTE |	CT-01 – ERRO EM LOGIN | 
 |-------------|-----------------------|
 |REQUISITOS ASSOCIADOS	|RF-001|
@@ -110,8 +115,8 @@
 |                    cadastrado, caso não será emitido uma 
 |                    mensagem de alertada informando 
 |                    "Usuário não encontrado!"|
-<ol>
-<ol>
+
+
 |CASO DE TESTE |	CT-01 – ERRO CADASTRAR ANIMAL | 
 |-------------|-----------------------|
 |REQUISITOS ASSOCIADOS	|RF-002|
@@ -126,4 +131,11 @@
 |Critérios de Êxito	|Para realizar o cadastro de animal deverá ser preenchido |                    todo o formulário, caso não seja será emitido 
 |                    uma mensagem informado 
 |                   "Preencher todos os campos corretamente"|
+ 
+
+
+
+
+
+  </ol>
  </ol>
