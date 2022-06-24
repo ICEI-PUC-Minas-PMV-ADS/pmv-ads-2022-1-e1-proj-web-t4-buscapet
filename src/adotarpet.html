@@ -18,16 +18,12 @@
       </div>
       <div class="wrapper">
         <div class="page_header">
-          <h1>Pets Encontrados</h1>
-    
-          <button class="button" onclick="cadastrar_pet()" >
-            Cadastrar pet
-          </button>
-    
+          <h1>Adotar Pet</h1>
+  
         </div>
         <div class="table_grid">
           <div class="table_header">
-            <h1>Pets cadastrados recentementes</h1>
+            <h1>Pets disponíveis</h1>
           <div id="table-icons">
             <button class="table-button"><i class="material-icons">search</i></button>
             <button class="table-button"><i class="material-icons">cloud</i></button>
@@ -91,6 +87,7 @@
   </body>
 
 <script>
+
   var base_url = 'https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2022-1-e1-proj-web-t4-buscapet/src/'
     function go_adotarpet() {
       base_url += 'adotarpet.html'
@@ -112,24 +109,12 @@
       window.location.href=base_url;
     }
 
+
     function cadastrar_pet() {
-      base_url += 'cadastrarpet.html?id=&modo=cadastrar'
-      window.location.href=base_url;
-    }
-  
-    function editar_pet(id) {
-      base_url += `cadastrarpet.html?id=${id}&modo=editar`
-      window.location.href=base_url;
-    }
-  
-    function visualizar_pet(id) {
-      base_url += `cadastrarpet.html?id=${id}&modo=visualizar`
-      window.location.href=base_url;
-    }
-  
-    function deletar_pet(id) {
-      base_url += `cadastrarpet.html?id=${id}&modo=deletar`
-      window.location.href=base_url;
+      var location = `${window.location}`;
+      location = location.replace("home", "cadastrarpet");
+      location =`${location}?id=&modo=cadastrar`
+      window.location.href=location;
     }
   
     const pets = JSON.parse(localStorage.getItem("pets") || '[]') 
@@ -170,7 +155,7 @@
           div = document.createElement("div"); 
           div.setAttribute('class','btn-group');
           
-          ['editar', 'consultar', 'deletar'].map(type => createButton({type: type, appendChildEl: div, id: id}))
+          ['adotar'].map(type => createButton({type: type, appendChildEl: div, id: id}))
   
           newRow.appendChild(div);
         })
@@ -182,36 +167,15 @@
   
   const createButton = ({type: type, appendChildEl: div, id: id}) => {
     switch(type) {
-      case 'editar':
-        btn = document.createElement("button"); 
-        btn.onclick = function(){
-        editar_pet(id)
-        return false;
-    };
-        btn.textContent = 'Editar';
-        btn.setAttribute('style', ` background-color: #107BFF; border: 1px solid #0553b3;`); 
-        div.appendChild(btn);
-        break;
-      case 'consultar':
+      case 'adotar':
         btn = document.createElement("button");
         btn = document.createElement("button"); 
         btn.onclick = function(){
           visualizar_pet(id)
         return false;
         }; 
-        btn.textContent = 'Consultar';
+        btn.textContent = 'Adotar';
         btn.setAttribute('style', ` background-color: #157347; border: 1px solid #0e643c;`); 
-        div.appendChild(btn); 
-        break;
-  
-      case 'deletar':
-        btn = document.createElement("button"); 
-        btn.onclick = function(){
-          deletar_pet(id)
-        return false;
-        }; 
-        btn.textContent = 'Deletar';
-        btn.setAttribute('style', ` background-color: #DC3545; border: 1px solid #a52c38;`); 
         div.appendChild(btn); 
         break;
     }

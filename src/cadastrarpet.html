@@ -1,221 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Pet</title>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-        body {
-            background-color: #f2f2f2;
-            font-family: 'Poppins', sans-serif;
-            color: rgba(0, 0, 0, 0.8);
-            font-weight: 400;
-            line-height: 1.58;
-            letter-spacing: -.003em;
-            font-size: 20px;
-            padding: 0px;
-            margin: 0px;
-        }
+      #titulo {
+          color: #bbb9b9;
+          font-size: 18px;
+          color: #bbb9b9;
+          position: absolute;
+          right: 72%;
+          top: 15%;
+          font-family: 'Poppins', sans-serif
+      }
 
-        .button {
-            background-color: rebeccapurple;
-            border: none;
-            color: white;
-            padding: 13px 205px;
-            margin: -20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
-            cursor: pointer;
-            border-radius: 6px;
-            position: absolute;
-            right: 8.4%;
-            top: 105%;
-        }
+      #tituloform1 {
+          font-weight: bold;
+          opacity: 0.8;
+      }
 
-        #titulo {
-            color: #bbb9b9;
-            font-size: 18px;
-            color: #bbb9b9;
-            position: absolute;
-            right: 72%;
-            top: 15%;
-            font-family: 'Poppins', sans-serif
-        }
+      #tituloform2 {
+          font-weight: bold;
+          opacity: 0.8;
+      }
 
-        #tituloform1 {
-            font-weight: bold;
-            opacity: 0.8;
-        }
+      #form1 {
+          /*Formulário de caracteristicas*/
+          display: inline-table;
+          width: 500px;
+          line-height: 1.30;
+          background-color: white;
+          position: absolute;
+          top: 30%;
+          right: 50%;
+          padding: 15px;
+          padding-top: 25px;
+          border-radius: 4px;
+          font-size: 18px;
+          box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
 
-        #tituloform2 {
-            font-weight: bold;
-            opacity: 0.8;
-        }
+      }
 
-        #form1 {
-            /*Formulário de caracteristicas*/
-            display: inline-table;
-            width: 500px;
-            line-height: 1.30;
-            background-color: white;
-            position: absolute;
-            top: 30%;
-            right: 50%;
-            padding: 15px;
-            padding-top: 25px;
-            border-radius: 4px;
-            font-size: 18px;
-            box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
-
-        }
-
-        #form2 {
-            /*Formulário com a ultima localização*/
-            display: inline-table;
-            width: 500px;
-            line-height: 1.30;
-            background-color: white;
-            position: absolute;
-            top: 30%;
-            right: 6%;
-            padding: 15px;
-            padding-top: 25px;
-            border-radius: 4px;
-            font-size: 18px;
-            box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
-        }
+      #form2 {
+          /*Formulário com a ultima localização*/
+          display: inline-table;
+          width: 500px;
+          line-height: 1.30;
+          background-color: white;
+          position: absolute;
+          top: 30%;
+          right: 6%;
+          padding: 15px;
+          padding-top: 25px;
+          border-radius: 4px;
+          font-size: 18px;
+          box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
+      }
 
 
-        input[type=text] {
-            /*Linhas amarelas que o usúario preenche*/
-            width: 100%;
-            padding: 0px 0px;
-            margin: 0px 0;
-            box-sizing: border-box;
-            border: none;
-            border-bottom: 2px solid orange;
-        }
+      input[type=text] {
+          /*Linhas amarelas que o usúario preenche*/
+          width: 100%;
+          padding: 0px 0px;
+          margin: 0px 0;
+          box-sizing: border-box;
+          border: none;
+          border-bottom: 2px solid orange;
+      }
+   
 
+      #msgError {
+          /*Mensagem de erro*/
+          text-align: center;
+          color: red;
+          background-color: #ffbbbb;
+          font-family: 'Poppins', sans-serif;
+          font-weight: 400;
+          line-height: 1.58;
+          letter-spacing: -.003em;
+          font-size: 20px;
+          padding: 10px;
+          border-radius: 4px;
+          display: none;
+          margin: 0px;
+      }
 
-        .wrapper {
-            display: grid;
-            grid-template-columns: repeat(11, 1fr);
-            background-color: #f2f2f2;
-            grid-auto-rows: minmax(50px, auto);
-        }
+      #msgSucess {
+          /*Mensagem de sucesso*/
+          text-align: center;
+          color: green;
+          background-color: #bbffbe;
+          font-family: 'Poppins', sans-serif;
+          font-weight: 400;
+          line-height: 1.58;
+          letter-spacing: -.003em;
+          font-size: 20px;
+          padding: 10px;
+          border-radius: 4px;
+          display: none;
+          margin: 0px;
+      }
 
-        .nav {
-            grid-column: 1/ 12;
-            z-index: 1;
-            grid-row: 1;
-            background-color: orange;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            box-shadow: 0px 1px 4px rgb(100 116 139 / 12%)
-        }
-
-        .nav>#start-menu {
-            display: flex;
-            gap: 0px;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .nav>#start-menu>a {
-            margin: 0px;
-            padding: 0px;
-            text-align: center;
-            line-height: 75px;
-            font-size: 20px;
-            font-weight: 500;
-        }
-
-        .nav-menu-button>a {
-            font-weight: bold;
-        }
-
-        .nav-menu-button {
-            background-color: transparent;
-            /*Botões da barra de navegação*/
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-
-        #msgError {
-            /*Mensagem de erro*/
-            text-align: center;
-            color: red;
-            background-color: #ffbbbb;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 400;
-            line-height: 1.58;
-            letter-spacing: -.003em;
-            font-size: 20px;
-            padding: 10px;
-            border-radius: 4px;
-            display: none;
-            margin: 0px;
-        }
-
-        #msgSucess {
-            /*Mensagem de sucesso*/
-            text-align: center;
-            color: green;
-            background-color: #bbffbe;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 400;
-            line-height: 1.58;
-            letter-spacing: -.003em;
-            font-size: 20px;
-            padding: 10px;
-            border-radius: 4px;
-            display: none;
-            margin: 0px;
-        }
-    </style>
-</head>
-
-
-<body>
-    <div class="wrapper">
-        <div class="nav">
-            <div id="start-menu">
-                <button class="nav-menu-button">
-                    <i class="material-icons">menu</i>
-                </button>
-                <a>Busca Pet</a>
-            </div>
-
-
-            <button class="nav-menu-button">
-                <i class="material-icons">group</i>
-            </button>
+      .float{
+        position:fixed;
+        width:160px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color: rebeccapurple;
+        color:#FFF;
+        text-align:center;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        box-shadow: 2px 2px 2px 1px rgba(41, 39, 39, 0.2);
+        cursor: pointer;
+        border-radius: 4px;
+        border: none;
+      }
+      
+      .my-float{
+        margin-top:22px;
+      }
+  </style>
+  </head>
+  <!-- <body><div class="area"></div> -->
+    
+    <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+          <div class="nav-icon-menu">
+            <span class="material-icons">menu</span>
+          </div>
         </div>
-    </div>
+        <div class="nav-links">
+            <span class="material-icons">group</span>
+        </div>
+      </div>
+      <div id="msgError"></div>
+      <div id="msgSucess"></div>
+      <div class="wrapper">
+        
+        <div d="titulo" class="page_header">
+          <h1 id="pageTitle">Cadastrar Pet</h1>
+    
+        </div>
 
-    <div id="titulo">
-        <h1 id="pageTitle">Cadastrar Pet</h1>
-    </div>
-
-    <div id="msgError"></div>
-    <div id="msgSucess"></div>
 
     <div id="form1">
         <div id="tituloform1">
@@ -255,10 +187,70 @@
 
     <div id="botao">
 
-        <button id="buttonPet" class="button" onclick='cadastrarpet()'>Cadastrar Pet</button>
+        <button id="buttonPet" class="float" onclick='cadastrarpet()'>Cadastrar Pet</button>
     </div>
-</body>
-<script>
+      </div>
+      <nav class="main-menu">
+        <ul>
+            <li>
+                <a href='javascript:;' onclick='go_home();'>
+                    <i class="fa fa-home fa-2x nav-icon "></i>
+                    <span class="nav-text" >
+                        Home
+                    </span>
+                </a>
+              
+            </li>
+            <li>
+              <a href='javascript:;' onclick='go_cadastrarpet();'>
+                    <i class="fa fa-map-marker fa-2x nav-icon"></i>
+                    <span class="nav-text">
+                        Cadastrar Pet
+                    </span>
+                </a>
+            </li>
+            <li>
+              <a href='javascript:;' onclick='go_adotarpet();'>
+                     <i class="fa fa-search fa-2x nav-icon "></i>
+                     <span class="nav-text">
+                        Adotar Pet
+                     </span>
+                 </a>
+             </li>
+            <li>
+              <a href='javascript:;' onclick='go_perfilusuario();'>
+                   <i class="fa fa-user fa-2x nav-icon "></i>
+                    <span class="nav-text">
+                        Perfil de Usuário
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+  </body>
+
+  <script>
+    var base_url = 'https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2022-1-e1-proj-web-t4-buscapet/src/'
+    function go_adotarpet() {
+      base_url += 'adotarpet.html'
+      window.location.href=base_url;
+    }
+
+    function go_perfilusuario() {
+      base_url += 'perfilusuario.html'
+      window.location.href=base_url;
+    }
+
+    function go_cadastrarpet() {
+      base_url += 'cadastrarpet.html?id=&modo=cadastrar'
+      window.location.href=base_url;
+    }
+
+    function go_home() {
+      base_url += 'home.html'
+      window.location.href=base_url;
+    }
+
     
     let pageTitle = document.querySelector('#pageTitle')
 
@@ -674,5 +666,4 @@
 
 
 </script>
-
-</html>
+    </html>
