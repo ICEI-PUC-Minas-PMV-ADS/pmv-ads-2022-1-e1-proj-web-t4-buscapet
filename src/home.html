@@ -94,42 +94,42 @@
   var base_url = 'https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2022-1-e1-proj-web-t4-buscapet/src/'
     function go_adotarpet() {
       base_url += 'adotarpet.html'
-      window.location.href=base_url;
+      window.location.replace(base_url);
     }
 
     function go_perfilusuario() {
       base_url += 'perfilusuario.html'
-      window.location.href=base_url;
+      window.location.replace(base_url);
     }
 
     function go_cadastrarpet() {
       base_url += 'cadastrarpet.html?id=&modo=cadastrar'
-      window.location.href=base_url;
+      window.location.replace(base_url);
     }
 
     function go_home() {
       base_url += 'home.html'
-      window.location.href=base_url;
+      window.location.replace(base_url);
     }
 
     function cadastrar_pet() {
       base_url += 'cadastrarpet.html?id=&modo=cadastrar'
-      window.location.href=base_url;
+      window.location.replace(base_url);
     }
   
     function editar_pet(id) {
       base_url += `cadastrarpet.html?id=${id}&modo=editar`
-      window.location.href=base_url;
+      window.location.replace(base_url);
     }
   
     function visualizar_pet(id) {
       base_url += `cadastrarpet.html?id=${id}&modo=visualizar`
-      window.location.href=base_url;
+      window.location.replace(base_url);
     }
   
     function deletar_pet(id) {
       base_url += `cadastrarpet.html?id=${id}&modo=deletar`
-      window.location.href=base_url;
+      window.location.replace(base_url);
     }
   
     const pets = JSON.parse(localStorage.getItem("pets") || '[]') 
