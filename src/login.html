@@ -78,12 +78,26 @@
   </div>
 
 <script>
+var base_url = 'https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2022-1-e1-proj-web-t4-buscapet/src/'
 function login() {
   var email = document.getElementById("login_email").value;
   var password = document.getElementById("login_password").value;
 
-  var localStorageEmail = localStorage.getItem("email");
-  var localStoragePassword = localStorage.getItem("senha");
+  scaffold_usuario = JSON.stringify({
+    nome: null,
+    endereco: null,
+    cep: null,
+    telefone: null,
+    email: null,
+    senha: null
+  })
+
+  var usuario = JSON.parse(localStorage.getItem("login") || scaffold_usuario)
+  
+  
+
+  var localStorageEmail = usuario.email;
+  var localStoragePassword = usuario.senha;
 
   if(
     (localStorageEmail != null && localStorageEmail != undefined) &&
@@ -91,9 +105,9 @@ function login() {
     (localStorageEmail == email && localStoragePassword == password)
     ) {
       alert(`login realizado com sucesso !`)
-      var location = `${window.location}`;
-      location = location.replace("login", "home");
-      window.location.replace(location);
+      base_url += 'home.html'
+
+      window.location.replace(base_url);
     } else {
       alert(`Usuário não encontrado !`)
       email = document.getElementById("login_email").value = "";
@@ -105,8 +119,24 @@ function register () {
   email = document.getElementById("login_email").value;
   password = document.getElementById("login_password").value;
 
-  var localStorageEmail = localStorage.getItem("email");
-  var localStoragePassword = localStorage.getItem("senha");
+  scaffold_usuario = JSON.stringify({
+    nome: null,
+    endereco: null,
+    cep: null,
+    telefone: null,
+    email: null,
+    senha: null
+  })
+
+
+  var usuario = JSON.parse(localStorage.getItem("login") || scaffold_usuario)
+  
+
+  var localStorageEmail = usuario.email;
+  var localStoragePassword = usuario.senha;
+
+
+
 
   if(
     (localStorageEmail !== null && localStorageEmail !== undefined) &&
@@ -121,12 +151,18 @@ function register () {
       email = document.getElementById("registeremail").value;
       senha = document.getElementById("registersenha").value;
 
-      localStorage.setItem("nome", nome);
-      localStorage.setItem("endereco", endereco);
-      localStorage.setItem("telefone", telefone);
-      localStorage.setItem("email", email);
-      localStorage.setItem("senha", senha);
+      const usuario = {
+        nome: nome,
+        endereco: endereco,
+        cep: null,
+        telefone: telefone,
+        email: email,
+        senha: senha
+      }
 
+
+      localStorage.setItem("login", JSON.stringify(usuario))
+  
 
       nome = document.getElementById("registername").value = "";
       endereco = document.getElementById("registerendereco").value = "";
