@@ -2,9 +2,50 @@
   <head>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+      body {font-family: Arial, Helvetica, sans-serif;}
+      
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        z-index:2000;
+      }
+      
+      /* Modal Content */
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+      
+      /* The Close Button */
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      </style>
   </head>
-  <!-- <body><div class="area"></div> -->
-    
     <div class="nav">
         <input type="checkbox" id="nav-check">
         <div class="nav-header">
@@ -19,17 +60,78 @@
       <div class="wrapper">
         <div class="page_header">
           <h1>Adotar Pet</h1>
-  
+        
+<div id="modalAdotarPet" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Você adotou um novo Pet!</h2>
+
+    <h4 style="margin-bottom:-1px">informações do tutor:</h4>
+    <table name="tableUsuario" id="tableUsuario">
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Cep</th>
+        <th>Telefone</th>
+      </tr>
+      <tbody id="tbodyUsuario">
+
+      </tbody>
+    </table>
+
+    <h4 style="margin-bottom:-1px">informações do pet:</h4>
+    <table name="tablePetAdotado" id="tablePetAdotado">
+      <tr>
+        <th>Id</th>
+        <th>especie</th>
+        <th>tamanho</th>
+        <th>cor</th>
+        <th>observações</th>
+      </tr>
+      <tbody id="tbodyPetAdotado">
+
+      </tbody>
+    </table>
+
+    <br>
+
+    <h4 style="margin-bottom:-1px">endereço para retirada do pet:</h4>
+    <table name="tableEndereco" id="tableEndereco">
+      <tr>
+        <th>Estado</th>
+        <th>Cidade</th>
+        <th>Bairro</th>
+        <th>Rua</th>
+        <th>Número</th>
+        <th>CEP</th>
+        <th>Observação</th>
+      </tr>
+      <tbody id="tbodyEndereco">
+        <tr>
+          <td>Ceará</td>
+          <td>Fortaleza</td>
+          <td>Centro</td>
+          <td>Pedro Pereira</td>
+          <td>1033</td>
+          <td>60035-000</td>
+          <td>proximo ao teatro</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
         </div>
-        <div class="table_grid">
-          <div class="table_header">
-            <h1>Pets disponíveis</h1>
-          <div id="table-icons">
-            <button class="table-button"><i class="material-icons">search</i></button>
-            <button class="table-button"><i class="material-icons">cloud</i></button>
-            <button class="table-button"><i class="material-icons">print</i></button>
+        
+        
+        <div class="table_grid1">
+          <div class="table_header1">
+            <h1>Pets disponíveis para adoção</h1>
           </div>
-        </div>
           <table name="tablePets" id="tablePets">
             <tr>
               <th>Id</th>
@@ -43,9 +145,7 @@
     
             </tbody>
           </table>
-    
         </div>
-    
       </div>
     <nav class="main-menu">
             <ul>
@@ -85,18 +185,21 @@
             </ul>
         </nav>
   </body>
+  <script>
+    // Get the modal
 
+    </script>
 <script>
 
   var base_url = 'https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2022-1-e1-proj-web-t4-buscapet/src/'
     function go_adotarpet() {
       base_url += 'adotarpet.html'
-      window.location.href=base_url;
+      window.location.replace(base_url);
     }
 
     function go_perfilusuario() {
       base_url += 'perfilusuario.html'
-      window.location.href=base_url;
+      window.location.replace(base_url);
     }
 
     function go_cadastrarpet() {
@@ -106,29 +209,66 @@
 
     function go_home() {
       base_url += 'home.html'
-      window.location.href=base_url;
+      window.location.replace(base_url);
     }
 
 
-    function cadastrar_pet() {
-      var location = `${window.location}`;
-      location = location.replace("home", "cadastrarpet");
-      location =`${location}?id=&modo=cadastrar`
-      window.location.href=location;
+    function adotar_pet(id) {
+
+        const pets = JSON.parse(localStorage.getItem("pets") || '[]')
+
+        const pet = pets.find(pet => pet.id == id);
+
+
+      scaffold_usuario = JSON.stringify({
+        id: 1,  
+        nome: null,
+        endereco: null,
+        cep: null,
+        telefone: null,
+        email: null,
+        senha: null,
+        petAdotado: [],
+      })
+
+      let usuario = JSON.parse(localStorage.getItem('login') || scaffold_usuario);
+      let modal = document.getElementById("modalAdotarPet");
+      let pet_tutorado = usuario.petAdotado
+      pet_tutorado.push(pet)
+      usuario.petAdotado = pet_tutorado
+      localStorage.setItem('login', JSON.stringify(usuario))
+      petsParaAdotar = pets.filter((pet) => usuario.petAdotado.filter(petadotado => pet.id == petadotado.id).length == 0)
+    
+      updateTablePets(petsParaAdotar)
+      updateTablePetAdotado([pet])
+      modal.style.display = "block";
+      let span = document.getElementsByClassName("close")[0];
+      
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
     }
   
     const pets = JSON.parse(localStorage.getItem("pets") || '[]') 
   
   
-  function updateTablePets(pets) {
-      let table = document.getElementById("tablePets");
-      let tableBody = document.getElementById("tbodyPets");
+  function updateTableUsuario(usuario) {
+      let table = document.getElementById("tableUsuario");
+      let tableBody = document.getElementById("tbodyUsuario");
       let newRow; 
       let newCell;
   
         tableBody.innerHTML = "";
+
+         let linha=usuario;
+
   
-        pets.map(linha => {
           newRow = document.createElement("tr");
           tableBody.appendChild(newRow);
   
@@ -150,28 +290,97 @@
               newRow.appendChild(newCell);
             }
           }
-  
-          let id = document.querySelector(`#tablePets_id_${linha.id}`).textContent;
-          div = document.createElement("div"); 
-          div.setAttribute('class','btn-group');
-          
-          ['adotar'].map(type => createButton({type: type, appendChildEl: div, id: id}))
-  
-          newRow.appendChild(div);
-        })
-  
         
   
   }
   
-  
+  function updateTablePetAdotado(petadotado) {
+    let table = document.getElementById("tablePetAdotado");
+    let tableBody = document.getElementById("tbodyPetAdotado");
+    let newRow; 
+    let newCell;
+
+      tableBody.innerHTML = "";
+
+      petadotado.map(linha => {
+        newRow = document.createElement("tr");
+        tableBody.appendChild(newRow);
+
+
+        for (let index = 0; index < 5; index++) {
+          coluna = Object.values(linha)[index]
+          let key = Object.keys(linha)[index]
+          let value = Object.values(linha)[index]
+
+          if(Object.keys(linha)[index] == 'id') {
+            newCell = document.createElement("td");
+            newCell.setAttribute('id',`${table.getAttribute('name')}_${key}_${value}`);
+            newCell.textContent = coluna;
+            newRow.appendChild(newCell);
+          } else {
+
+            newCell = document.createElement("td");
+            newCell.textContent = coluna;
+            newRow.appendChild(newCell);
+          }
+        }
+      })
+
+      
+
+}
+
+  function updateTablePets(pets) {
+    let table = document.getElementById("tablePets");
+    let tableBody = document.getElementById("tbodyPets");
+    let newRow; 
+    let newCell;
+
+      tableBody.innerHTML = "";
+
+      pets.map(linha => {
+        newRow = document.createElement("tr");
+        tableBody.appendChild(newRow);
+
+
+        for (let index = 0; index < 5; index++) {
+          coluna = Object.values(linha)[index]
+          let key = Object.keys(linha)[index]
+          let value = Object.values(linha)[index]
+
+          if(Object.keys(linha)[index] == 'id') {
+            newCell = document.createElement("td");
+            newCell.setAttribute('id',`${table.getAttribute('name')}_${key}_${value}`);
+            newCell.textContent = coluna;
+            newRow.appendChild(newCell);
+          } else {
+
+            newCell = document.createElement("td");
+            newCell.textContent = coluna;
+            newRow.appendChild(newCell);
+          }
+        }
+
+        let id = document.querySelector(`#tablePets_id_${linha.id}`).textContent;
+        div = document.createElement("div"); 
+        div.setAttribute('class','btn-group');
+        
+        ['adotar'].map(type => createButton({type: type, appendChildEl: div, id: id}))
+
+        newRow.appendChild(div);
+      })
+
+      
+
+}
+
   const createButton = ({type: type, appendChildEl: div, id: id}) => {
     switch(type) {
       case 'adotar':
         btn = document.createElement("button");
         btn = document.createElement("button"); 
         btn.onclick = function(){
-          visualizar_pet(id)
+          adotar_pet(id)
         return false;
         }; 
         btn.textContent = 'Adotar';
@@ -183,8 +392,24 @@
     return div;
   }
   
+
+  scaffold_usuario = JSON.stringify({
+    id:1,
+    nome: null,
+    endereco: null,
+    cep: null,
+    telefone: null,
+    email: null,
+    senha: null,
+    petAdotado: []
+  })
+
+  let usuario = JSON.parse(localStorage.getItem('login') || scaffold_usuario);
   
-  updateTablePets(pets)
+  petsParaAdotar = pets.filter((pet) => usuario.petAdotado.filter(petadotado => pet.id == petadotado.id).length == 0)
+
+  updateTablePets(petsParaAdotar)
+  updateTableUsuario(usuario)
   
   
   

@@ -25,8 +25,8 @@
           </button>
     
         </div>
-        <div class="table_grid">
-          <div class="table_header">
+        <div class="table_grid1">
+          <div class="table_header1">
             <h1>Pets cadastrados recentementes</h1>
           <div id="table-icons">
             <button class="table-button"><i class="material-icons">search</i></button>
@@ -103,7 +103,7 @@
     }
 
     function go_cadastrarpet() {
-      base_url += 'cadastrarpet.html?id=&modo=cadastrar'
+      base_url += 'cadastrarpet.html?modo=cadastrar'
       window.location.replace(base_url);
     }
 
@@ -113,7 +113,7 @@
     }
 
     function cadastrar_pet() {
-      base_url += 'cadastrarpet.html?id=&modo=cadastrar'
+      base_url += 'cadastrarpet.html?modo=cadastrar'
       window.location.replace(base_url);
     }
   
@@ -219,8 +219,22 @@
     return div;
   }
   
+  scaffold_usuario = JSON.stringify({
+    id:1,
+    nome: null,
+    endereco: null,
+    cep: null,
+    telefone: null,
+    email: null,
+    senha: null,
+    petAdotado: []
+  })
+
+  let usuario = JSON.parse(localStorage.getItem('login') || scaffold_usuario);
   
-  updateTablePets(pets)
+  petsParaAdotar = pets.filter((pet) => usuario.petAdotado.filter(petadotado => pet.id == petadotado.id).length == 0)
+
+  updateTablePets(petsParaAdotar)
   
   
   

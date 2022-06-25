@@ -120,12 +120,14 @@ function register () {
   password = document.getElementById("login_password").value;
 
   scaffold_usuario = JSON.stringify({
+    id: 1,
     nome: null,
     endereco: null,
     cep: null,
     telefone: null,
     email: null,
-    senha: null
+    senha: null,
+    petAdotado: []
   })
 
 
@@ -152,12 +154,14 @@ function register () {
       senha = document.getElementById("registersenha").value;
 
       const usuario = {
+        id: 1,
         nome: nome,
         endereco: endereco,
-        cep: null,
+        cep: "60541850",
         telefone: telefone,
         email: email,
-        senha: senha
+        senha: senha,
+        petAdotado: []
       }
 
 
